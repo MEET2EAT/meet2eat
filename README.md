@@ -101,7 +101,7 @@ Meet2Eat stands for meet to eat. Socialize? Tech? How? use? conclusion?
 <img src="https://media.discordapp.net/attachments/897965541971607613/902320984869175326/Screen_Shot_2021-10-25_at_5.20.54_PM.png?width=1874&height=957" width=800><br>
 
 ### [BONUS] Interactive Prototype
-<img src="https://submissions.us-east-1.linodeobjects.com/ios_university/G5hDvyS5.gif" width=200>
+<img src="G5hDvyS5.gif" width=200>
 
 ## Schema 
 [This section will be completed in Unit 9]
