@@ -11,18 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-Meet2Eat is an iOS app that do something useful???
-Objects: restaurants, users
-Use:
-conclusion:
-Meet2Eat stands for meet to eat. Socialize? Tech? How? use? conclusion?
-### App Evaluation
-- **Category:** Social, Video & Photo
-- **Mobile:** The app allows user uses camera, access photo library to post, and provide fast ,convienence service, and great battery performance for user.
-- **Story:** Allows users to make new friends, or connection when they go to eat by open table and let people who have the same interests. And also users can share picture.
-- **Market:** Anyone that does not want to eat alone. For now, market will be focusing on college students since there are many people around and it serves the purpose of this app well. 
-- **Habit:** Users can post throughout the day many times. Users willing to user our app at least once a day for meeting new people, making new friends, and earn the discount for the restaurant. Ranking system and bonus will encourage them using more frequently.
-- **Scope:** Posting pics and view feeds. Open table (time to eat)to meet other users in person. May expanded to other area such as events meeting, sport matching...
+Meet2Eat is an iOS app that connects people through thoughtful conversations during meals. By giving away discounts to our users to encourage them connecting to different people and experiencing a different perspective of the world and community. Meet2Eat: a place for good food and good company to gather around.
 
 
 ## Product Spec
