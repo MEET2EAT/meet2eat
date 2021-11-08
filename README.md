@@ -3,6 +3,13 @@ Original App Design Project - README Template
 
 # Meet2Eat
 
+## Work Distribution
+* Khanh Ho: LoginViewController, FeedTableViewController
+* Airi Shimamura: ProfileViewController, ProfileSettingViewController
+* KuoHuang Vincent Hew: LobbyTableViewController, FilterViewController
+* Loc Luu: PostViewController, HostViewController
+* An Lam: TableInfoViewController, SearchRestaurantViewController
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
