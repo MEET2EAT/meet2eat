@@ -26,8 +26,8 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* [x] User logs in to use the app.
-* [ ] User can post the image and give other user's image comment.
+* User logs in to use the app.
+* User can post the image and give other user's image comment.
 * User can join, withdraw, cancel, or create table.
 * User can see the list of tables.
 * User can see the table details.
