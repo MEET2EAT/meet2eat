@@ -242,8 +242,3 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
     - (Delete) Delete existing table
 - Create Table Screen
     - (Create/POST) Create a table for host and users
-    
-
-email: meet2eatyay@gmail.com
-Passwords: Meet2Eat!!!
-Birthday: Jan 1, 1991
