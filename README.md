@@ -23,6 +23,11 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 
 ## Product Spec
 
+### 1. User Stories Check-off (Unit 10)
+- [x] Work distribution for each team member.
+- [X] Project prototype.
+- [x] Install CocoaPod.
+
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
