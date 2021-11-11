@@ -101,7 +101,6 @@
 				EE7D3A2D9DE00C9F030A8BD3 /* Pods-meat2eatTests.debug.xcconfig */,
 				92BFE284ACB68276F39BB03C /* Pods-meat2eatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
