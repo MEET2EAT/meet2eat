@@ -20,7 +20,9 @@
 
 #### Build Progress Walkthrough
 
-<img src='G5hDvyS5.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ## Table of Contents
 1. [Overview](#Overview)
