@@ -18,7 +18,8 @@
 - [x] Completed user stories checked-off in README. (2pts)
 - [x] Gifs created to show build progress and added to README. (3pts)
 
-####Build Progress Walkthrough
+#### Build Progress Walkthrough
+
 <img src='G5hDvyS5.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ## Table of Contents
