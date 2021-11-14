@@ -7,6 +7,23 @@
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
+## Weekly User Story Check-off
+
+### Unit 10
+- [x] Work distribution for each team member.
+- [x] Project prototype.
+- [x] Install CocoaPod.
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+
+<img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
@@ -19,15 +36,6 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 
 
 ## Product Spec
-
-### User Stories Check-off (Unit 10)
-- [x] Work distribution for each team member.
-- [X] Project prototype.
-- [x] Install CocoaPod.
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [ ] Gifs created to show build progress and added to README. (3pts)
 
 ### 1. User Stories (Required and Optional)
 
