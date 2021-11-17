@@ -1,13 +1,19 @@
 # Meet2Eat
 
 ## Work Distribution
-* Khanh Ho: LoginViewController, FeedTableViewController
+* Khanh Ho: LoginViewController, FeedViewController
 * Airi Shimamura: ProfileViewController, ProfileSettingViewController
-* KuoHuang Vincent Hew: LobbyTableViewController, FilterViewController
+* KuoHuang Vincent Hew: LobbyViewController, FilterViewController
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
 ## Weekly User Story Check-off
+
+### Unit 11
+- [ ] Updated status of issues in Project board. (2pts)
+- [ ] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [ ] Completed user stories checked-off in README. (2pts)
+- [ ] Gifs created to show build progress and added to README. (3pts)
 
 ### Unit 10
 - [x] Work distribution for each team member.
