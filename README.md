@@ -157,7 +157,7 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 | objectId      | String   | registered as table id (default field) |
 | createdAt     | DateTime | date when the table is created (default field) |
 | updatedAt     | DateTime | date when the table is updated (default field) |
-| ACL           | ACL      | rw permission |
+| ACL           | ACL      | rw permission (default field) |
 | host          | Pointer to User | the host of the table |
 | participant   | Array Pointers to User | the participants of the table including host and guests |
 | tableImg      | File     | image icon for table | 
