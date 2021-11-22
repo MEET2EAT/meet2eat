@@ -165,15 +165,18 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 #### Table
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
-| objectId      | String   | unique id for the table (default field) |
-| host          | Pointer to User| the host of the table|
-| guest         | Array Pointer to User| the guests of the table|
-| capacity      | Integer  | number of people accepted in the table|
-| restaurant    | String  | the name of the restaurant where to open tb|
-| phone         | Number  | the phone of the restaurant|
-| location        | object   | The street of the location address of the table location = {street, state, city, country, zipcode}|
-| createdAt     | DateTime | date when post is created (default field) |
-| updatedAt     | DateTime | date when post is last updated (default field) |
+| objectId      | String   | registered as table id (default field) |
+| createdAt     | DateTime | date when the table is created (default field) |
+| updatedAt     | DateTime | date when the table is updated (default field) |
+| ACL           | ACL      | rw permission (default field) |
+| host          | Pointer to User | the host of the table |
+| participant   | Array Pointers to User | the participants of the table including host and guests |
+| tableImg      | File     | image icon for table | 
+| description   | String   | description for table |
+| restaurantName| String   | the name of the restaurant where to open tb |
+| restaurantLoc | object(string)  | The street of the location address of the table location = {street, state, city, country, zipcode} |
+| current       | Integer  | number of people accepted in the table currently |
+| max           | Integer  | maximum number of people can participate to the table |
 
 
 
