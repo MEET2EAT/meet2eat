@@ -1,13 +1,28 @@
 # Meet2Eat
 
 ## Work Distribution
-* Khanh Ho: LoginViewController, FeedTableViewController
+* Khanh Ho: LoginViewController, FeedViewController
 * Airi Shimamura: ProfileViewController, ProfileSettingViewController
-* KuoHuang Vincent Hew: LobbyTableViewController, FilterViewController
+* KuoHuang Vincent Hew: LobbyViewController, FilterViewController
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
 ## Weekly User Story Check-off
+
+### Unit 11
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+
+<img src='unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+<img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
+<img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ### Unit 10
 - [x] Work distribution for each team member.
@@ -23,6 +38,8 @@
 <img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 <img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
+
 
 ## Table of Contents
 1. [Overview](#Overview)
