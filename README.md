@@ -10,10 +10,10 @@
 ## Weekly User Story Check-off
 
 ### Unit 11
-- [ ] Updated status of issues in Project board. (2pts)
-- [ ] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [ ] Completed user stories checked-off in README. (2pts)
-- [ ] Gifs created to show build progress and added to README. (3pts)
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
 
 ### Unit 10
 - [x] Work distribution for each team member.
