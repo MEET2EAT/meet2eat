@@ -17,7 +17,7 @@
 
 #### Build Progress Walkthrough
 
-<img src='unit11_projectPanel.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
+<img src='unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
 <img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
 <img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
