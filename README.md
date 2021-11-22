@@ -10,10 +10,19 @@
 ## Weekly User Story Check-off
 
 ### Unit 11
-- [ ] Updated status of issues in Project board. (2pts)
-- [ ] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [ ] Completed user stories checked-off in README. (2pts)
-- [ ] Gifs created to show build progress and added to README. (3pts)
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+
+<img src='unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+<img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
+<img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ### Unit 10
 - [x] Work distribution for each team member.
@@ -29,6 +38,8 @@
 <img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 <img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
+
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -154,15 +165,18 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 #### Table
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
-| objectId      | String   | unique id for the table (default field) |
-| host          | Pointer to User| the host of the table|
-| guest         | Array Pointer to User| the guests of the table|
-| capacity      | Integer  | number of people accepted in the table|
-| restaurant    | String  | the name of the restaurant where to open tb|
-| phone         | Number  | the phone of the restaurant|
-| location        | object   | The street of the location address of the table location = {street, state, city, country, zipcode}|
-| createdAt     | DateTime | date when post is created (default field) |
-| updatedAt     | DateTime | date when post is last updated (default field) |
+| objectId      | String   | registered as table id (default field) |
+| createdAt     | DateTime | date when the table is created (default field) |
+| updatedAt     | DateTime | date when the table is updated (default field) |
+| ACL           | ACL      | rw permission (default field) |
+| host          | Pointer to User | the host of the table |
+| participant   | Array Pointers to User | the participants of the table including host and guests |
+| tableImg      | File     | image icon for table | 
+| description   | String   | description for table |
+| restaurantName| String   | the name of the restaurant where to open tb |
+| restaurantLoc | object(string)  | The street of the location address of the table location = {street, state, city, country, zipcode} |
+| current       | Integer  | number of people accepted in the table currently |
+| max           | Integer  | maximum number of people can participate to the table |
 
 
 

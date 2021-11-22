@@ -16,6 +16,12 @@
 		582B4B3E274ABD6A00EF4CA8 /* YelpStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B3D274ABD6A00EF4CA8 /* YelpStars.swift */; };
 		582B4B40274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B3F274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift */; };
 		582B4B42274ACAB100EF4CA8 /* 4762-food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 582B4B41274ACAB100EF4CA8 /* 4762-food-carousel.json */; };
+		55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B83FC32749F27100F35C98 /* ProfileViewController.swift */; };
+		55B83FC6274A581D00F35C98 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */; };
+		AD741FA227449FC40032822D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741FA127449FC40032822D /* PostViewController.swift */; };
+		9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E495274B01F1001D6079 /* LoginViewController.swift */; };
+		9122E498274B0231001D6079 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E497274B0231001D6079 /* FeedViewController.swift */; };
+		9122E49A274B210F001D6079 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E499274B210F001D6079 /* PostCell.swift */; };
 		ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910C2739DFD60098884A /* AppDelegate.swift */; };
 		ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910E2739DFD60098884A /* SceneDelegate.swift */; };
 		ADE991142739DFD60098884A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE991122739DFD60098884A /* Main.storyboard */; };
@@ -25,6 +31,7 @@
 		ADE9912E2739DFDE0098884A /* meat2eatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9912D2739DFDE0098884A /* meat2eatUITests.swift */; };
 		ADE991302739DFDE0098884A /* meat2eatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9912F2739DFDE0098884A /* meat2eatUITestsLaunchTests.swift */; };
 		B60DB6470720EDC851DE6449 /* Pods_meat2eat_meat2eatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */; };
+		F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8A3A92744B36600229615 /* TableCell.swift */; };
 		F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB7E65274076BD0014006F /* LobbyViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +65,14 @@
 		582B4B3D274ABD6A00EF4CA8 /* YelpStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpStars.swift; sourceTree = "<group>"; };
 		582B4B3F274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSubviewsSkeletonables.swift; sourceTree = "<group>"; };
 		582B4B41274ACAB100EF4CA8 /* 4762-food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4762-food-carousel.json"; sourceTree = "<group>"; };
+		55B83FC32749F27100F35C98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		6788A540B6325BB44C743DDE /* Pods_meat2eatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9122E495274B01F1001D6079 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9122E497274B0231001D6079 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		9122E499274B210F001D6079 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		92BFE284ACB68276F39BB03C /* Pods-meat2eatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.release.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD741FA127449FC40032822D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		ADE991092739DFD60098884A /* meat2eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meat2eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE9910C2739DFD60098884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE9910E2739DFD60098884A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +87,7 @@
 		ADE9912F2739DFDE0098884A /* meat2eatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meat2eatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eat_meat2eatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7D3A2D9DE00C9F030A8BD3 /* Pods-meat2eatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.debug.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1C8A3A92744B36600229615 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		F1EB7E65274076BD0014006F /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +193,9 @@
 				ADE9910E2739DFD60098884A /* SceneDelegate.swift */,
 				ADE991152739DFDE0098884A /* Assets.xcassets */,
 				ADE9911A2739DFDE0098884A /* Info.plist */,
+				9122E495274B01F1001D6079 /* LoginViewController.swift */,
+				9122E497274B0231001D6079 /* FeedViewController.swift */,
+				9122E499274B210F001D6079 /* PostCell.swift */,
 			);
 			path = meat2eat;
 			sourceTree = "<group>";
@@ -214,6 +231,9 @@
 			children = (
 				F1EB7E65274076BD0014006F /* LobbyViewController.swift */,
 				582B4B35274ABC8700EF4CA8 /* RestaurantsViewController.swift */,
+				55B83FC32749F27100F35C98 /* ProfileViewController.swift */,
+				55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */,
+				AD741FA127449FC40032822D /* PostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				582B4B39274ABD1C00EF4CA8 /* RestaurantCell.swift */,
+				F1C8A3A92744B36600229615 /* TableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -488,11 +509,18 @@
 				582B4B3E274ABD6A00EF4CA8 /* YelpStars.swift in Sources */,
 				582B4B38274ABCD300EF4CA8 /* Restaurant.swift in Sources */,
 				582B4B40274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift in Sources */,
-				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
 				582B4B36274ABC8700EF4CA8 /* RestaurantsViewController.swift in Sources */,
+        AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
+				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
+				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
+				9122E498274B0231001D6079 /* FeedViewController.swift in Sources */,
 				ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */,
+				55B83FC6274A581D00F35C98 /* ProfileSettingViewController.swift in Sources */,
+				55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */,
+				F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */,
 				ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */,
 				582B4B3C274ABD4400EF4CA8 /* API.swift in Sources */,
+				9122E49A274B210F001D6079 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
