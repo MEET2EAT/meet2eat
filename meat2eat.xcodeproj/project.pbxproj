@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		156DEE0BAC5B9097E31CCE3D /* Pods_meat2eatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6788A540B6325BB44C743DDE /* Pods_meat2eatTests.framework */; };
 		21D8B08E734A30762022C87B /* Pods_meat2eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B33CA9C86FF9D75F964D248 /* Pods_meat2eat.framework */; };
+
+		AD741FA227449FC40032822D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741FA127449FC40032822D /* PostViewController.swift */; };
 		9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E495274B01F1001D6079 /* LoginViewController.swift */; };
 		9122E498274B0231001D6079 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E497274B0231001D6079 /* FeedViewController.swift */; };
 		9122E49A274B210F001D6079 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E499274B210F001D6079 /* PostCell.swift */; };
+
 		ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910C2739DFD60098884A /* AppDelegate.swift */; };
 		ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910E2739DFD60098884A /* SceneDelegate.swift */; };
 		ADE991142739DFD60098884A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE991122739DFD60098884A /* Main.storyboard */; };
@@ -52,6 +55,7 @@
 		9122E497274B0231001D6079 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9122E499274B210F001D6079 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		92BFE284ACB68276F39BB03C /* Pods-meat2eatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.release.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD741FA127449FC40032822D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		ADE991092739DFD60098884A /* meat2eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meat2eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE9910C2739DFD60098884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE9910E2739DFD60098884A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F1EB7E65274076BD0014006F /* LobbyViewController.swift */,
+				AD741FA127449FC40032822D /* PostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -455,7 +460,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+        AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
 				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
+
 				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
 				9122E498274B0231001D6079 /* FeedViewController.swift in Sources */,
 				ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */,
