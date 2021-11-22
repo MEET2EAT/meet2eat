@@ -15,6 +15,16 @@
 - [x] Completed user stories checked-off in README. (2pts)
 - [x] Gifs created to show build progress and added to README. (3pts)
 
+#### Build Progress Walkthrough
+
+<img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_lobby' title='Build Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+![](https://i.imgur.com/LvEJLYV.gif)
+![](https://i.imgur.com/AJEJ5A2.gif)
+
 ### Unit 10
 - [x] Work distribution for each team member.
 - [x] Project prototype.
@@ -30,8 +40,7 @@
 
 <img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
 
-![](https://i.imgur.com/LvEJLYV.gif)
-![](https://i.imgur.com/AJEJ5A2.gif)
+
 
 ## Table of Contents
 1. [Overview](#Overview)
