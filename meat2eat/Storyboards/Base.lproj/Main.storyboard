@@ -427,7 +427,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="go to seach the restaurant"/>
                                 <connections>
-                                    <segue destination="8et-ub-81d" kind="presentation" id="Q7x-Yl-qh5"/>
+                                    <segue destination="8et-ub-81d" kind="presentation" modalPresentationStyle="fullScreen" id="Q7x-Yl-qh5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="create a table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENJ-vI-7Re">
@@ -450,22 +450,165 @@
         <!--Search Restaurant View Controller-->
         <scene sceneID="6SV-bM-KMl">
             <objects>
-                <viewController id="8et-ub-81d" userLabel="Search Restaurant View Controller" sceneMemberID="viewController">
+                <viewController id="8et-ub-81d" userLabel="Search Restaurant View Controller" customClass="RestaurantsViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cia-5d-uOX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search restaurant List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAx-b2-ucL">
-                                <rect key="frame" x="124" y="394" width="167" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <searchBar contentMode="redraw" placeholder="Search Restaurants" translatesAutoresizingMaskIntoConstraints="NO" id="W5Q-h9-LB8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="drA-De-UwF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" id="0uz-Ez-w9S" customClass="RestaurantCell" customModule="meat2eat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="172.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0uz-Ez-w9S" id="vfn-ZK-5Aa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="172.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sm-6B-reL">
+                                                    <rect key="frame" x="8" y="20" width="234" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-Ob-bgX">
+                                                    <rect key="frame" x="8" y="48" width="234" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-Kx-pMU">
+                                                    <rect key="frame" x="8" y="70" width="234" height="30"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HoU-Tr-7Ko">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="H2T-JC-VxC"/>
+                                                                <constraint firstAttribute="width" constant="120" id="Z4m-7b-IYF"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvQ-h4-KrY">
+                                                            <rect key="frame" x="128" y="0.0" width="106" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl4-S2-ntI">
+                                                    <rect key="frame" x="8" y="104" width="234" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <color key="textColor" systemColor="viewFlipsideBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ugu-QJ-B2n">
+                                                    <rect key="frame" x="250" y="8" width="156" height="156"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="Gio-No-Xdd"/>
+                                                        <constraint firstAttribute="height" constant="156" id="e9q-2W-d61"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ugu-QJ-B2n" firstAttribute="leading" secondItem="cGz-Kx-pMU" secondAttribute="trailing" constant="8" id="2QY-LV-D4x"/>
+                                                <constraint firstItem="4Sm-6B-reL" firstAttribute="top" secondItem="vfn-ZK-5Aa" secondAttribute="top" constant="20" id="6sd-D8-wVb"/>
+                                                <constraint firstItem="Ugu-QJ-B2n" firstAttribute="top" secondItem="vfn-ZK-5Aa" secondAttribute="top" constant="8" id="CEl-0s-B9J"/>
+                                                <constraint firstItem="cGz-Kx-pMU" firstAttribute="leading" secondItem="vfn-ZK-5Aa" secondAttribute="leading" constant="8" id="CP3-j5-E68"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bl4-S2-ntI" secondAttribute="bottom" constant="20" id="Djf-hF-xZM"/>
+                                                <constraint firstItem="4Sm-6B-reL" firstAttribute="leading" secondItem="vfn-ZK-5Aa" secondAttribute="leading" constant="8" id="N5X-ef-Kxs"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ugu-QJ-B2n" secondAttribute="trailing" constant="8" id="ZPu-PM-tHm"/>
+                                                <constraint firstItem="bl4-S2-ntI" firstAttribute="leading" secondItem="vfn-ZK-5Aa" secondAttribute="leading" constant="8" id="aCk-E2-etR"/>
+                                                <constraint firstItem="Ugu-QJ-B2n" firstAttribute="leading" secondItem="g0C-Ob-bgX" secondAttribute="trailing" constant="8" id="bNt-Sa-qF3"/>
+                                                <constraint firstItem="bl4-S2-ntI" firstAttribute="top" secondItem="cGz-Kx-pMU" secondAttribute="bottom" constant="4" id="daP-iS-ePY"/>
+                                                <constraint firstItem="g0C-Ob-bgX" firstAttribute="leading" secondItem="vfn-ZK-5Aa" secondAttribute="leading" constant="8" id="f0U-31-oP1"/>
+                                                <constraint firstItem="Ugu-QJ-B2n" firstAttribute="leading" secondItem="4Sm-6B-reL" secondAttribute="trailing" constant="8" id="hNG-F4-qEm"/>
+                                                <constraint firstItem="g0C-Ob-bgX" firstAttribute="top" secondItem="4Sm-6B-reL" secondAttribute="bottom" constant="4" id="hQr-96-BjQ"/>
+                                                <constraint firstItem="cGz-Kx-pMU" firstAttribute="top" secondItem="g0C-Ob-bgX" secondAttribute="bottom" constant="4" id="oQs-rB-Wpn"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ugu-QJ-B2n" secondAttribute="bottom" constant="8" id="pom-d6-FNY"/>
+                                                <constraint firstItem="Ugu-QJ-B2n" firstAttribute="leading" secondItem="bl4-S2-ntI" secondAttribute="trailing" constant="8" id="wqa-MO-1O2"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="g0C-Ob-bgX" id="Xnf-3Q-ncL"/>
+                                            <outlet property="nameLabel" destination="4Sm-6B-reL" id="rQ2-DG-juD"/>
+                                            <outlet property="phoneLabel" destination="bl4-S2-ntI" id="arZ-0c-H2Z"/>
+                                            <outlet property="restaurantImage" destination="Ugu-QJ-B2n" id="x5K-mI-RDI"/>
+                                            <outlet property="reviewsLabel" destination="DvQ-h4-KrY" id="Nat-1z-S28"/>
+                                            <outlet property="starsImage" destination="HoU-Tr-7Ko" id="uc5-qa-e0L"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LBM-eZ-WOS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="drA-De-UwF" secondAttribute="bottom" id="2gj-c9-UgI"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="top" secondItem="cia-5d-uOX" secondAttribute="top" id="2j8-RR-nUx"/>
+                            <constraint firstItem="drA-De-UwF" firstAttribute="trailing" secondItem="LBM-eZ-WOS" secondAttribute="trailing" id="XJy-pv-LB1"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="trailing" secondItem="LBM-eZ-WOS" secondAttribute="trailing" id="cZd-ni-BXW"/>
+                            <constraint firstItem="drA-De-UwF" firstAttribute="top" secondItem="cia-5d-uOX" secondAttribute="top" id="rm1-DY-2oO"/>
+                            <constraint firstItem="drA-De-UwF" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" id="tlo-z3-3Mp"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" id="yQE-bG-sH4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="W5Q-h9-LB8" id="bN7-5B-H09"/>
+                        <outlet property="tableView" destination="drA-De-UwF" id="18Q-mB-RPP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o55-cA-iab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -474,18 +617,22 @@
         <!--Table Info View Controller-->
         <scene sceneID="XxN-GL-xfa">
             <objects>
-                <viewController id="eoq-KE-RPA" customClass="TableInfoViewController" sceneMemberID="viewController">
+                <viewController id="eoq-KE-RPA" customClass="TableInfoViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6YJ-vb-iWY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="display detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-qi-ctu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ikemen Kuma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-qi-ctu">
                                 <rect key="frame" x="151" y="398" width="112" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SleepyBear" translatesAutoresizingMaskIntoConstraints="NO" id="GJX-a1-maL">
+                                <rect key="frame" x="0.0" y="-8" width="394" height="398"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dhr-9A-XBX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -721,10 +868,14 @@
         </scene>
     </scenes>
     <resources>
-      <image name="placeimg_100_100_arch" width="100" height="100"/>
-      <image name="image_placeholder" width="375" height="375"/>
+        <image name="SleepyBear" width="86.666664123535156" height="93.333335876464844"/>
+        <image name="placeimg_100_100_arch" width="100" height="100"/>
+        <image name="image_placeholder" width="375" height="375"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

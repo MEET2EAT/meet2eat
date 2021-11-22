@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		156DEE0BAC5B9097E31CCE3D /* Pods_meat2eatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6788A540B6325BB44C743DDE /* Pods_meat2eatTests.framework */; };
 		21D8B08E734A30762022C87B /* Pods_meat2eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B33CA9C86FF9D75F964D248 /* Pods_meat2eat.framework */; };
+		582B4B36274ABC8700EF4CA8 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B35274ABC8700EF4CA8 /* RestaurantsViewController.swift */; };
+		582B4B38274ABCD300EF4CA8 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B37274ABCD300EF4CA8 /* Restaurant.swift */; };
+		582B4B3A274ABD1C00EF4CA8 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B39274ABD1C00EF4CA8 /* RestaurantCell.swift */; };
+		582B4B3C274ABD4400EF4CA8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B3B274ABD4400EF4CA8 /* API.swift */; };
+		582B4B3E274ABD6A00EF4CA8 /* YelpStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B3D274ABD6A00EF4CA8 /* YelpStars.swift */; };
+		582B4B40274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B4B3F274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift */; };
+		582B4B42274ACAB100EF4CA8 /* 4762-food-carousel.json in Resources */ = {isa = PBXBuildFile; fileRef = 582B4B41274ACAB100EF4CA8 /* 4762-food-carousel.json */; };
 		55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B83FC32749F27100F35C98 /* ProfileViewController.swift */; };
 		55B83FC6274A581D00F35C98 /* ProfileSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */; };
 		AD741FA227449FC40032822D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741FA127449FC40032822D /* PostViewController.swift */; };
@@ -51,6 +58,13 @@
 		18EE62DA46E820F41D508A2C /* Pods-meat2eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eat.release.xcconfig"; path = "Target Support Files/Pods-meat2eat/Pods-meat2eat.release.xcconfig"; sourceTree = "<group>"; };
 		3B33CA9C86FF9D75F964D248 /* Pods_meat2eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC4B0268998694E5FC6AE04 /* Pods-meat2eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eat.debug.xcconfig"; path = "Target Support Files/Pods-meat2eat/Pods-meat2eat.debug.xcconfig"; sourceTree = "<group>"; };
+		582B4B35274ABC8700EF4CA8 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		582B4B37274ABCD300EF4CA8 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		582B4B39274ABD1C00EF4CA8 /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		582B4B3B274ABD4400EF4CA8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		582B4B3D274ABD6A00EF4CA8 /* YelpStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpStars.swift; sourceTree = "<group>"; };
+		582B4B3F274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSubviewsSkeletonables.swift; sourceTree = "<group>"; };
+		582B4B41274ACAB100EF4CA8 /* 4762-food-carousel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4762-food-carousel.json"; sourceTree = "<group>"; };
 		55B83FC32749F27100F35C98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewController.swift; sourceTree = "<group>"; };
 		6788A540B6325BB44C743DDE /* Pods_meat2eatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +132,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		582B4B1B274AB66A00EF4CA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				582B4B37274ABCD300EF4CA8 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		582B4B1E274AB67900EF4CA8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		87ED0C81214F6EF22E53A45A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +182,8 @@
 		ADE9910B2739DFD60098884A /* meat2eat */ = {
 			isa = PBXGroup;
 			children = (
+				582B4B1E274AB67900EF4CA8 /* New Group */,
+				582B4B1B274AB66A00EF4CA8 /* Model */,
 				F1EB7E67274076F10014006F /* Extra */,
 				F1EB7E642740764D0014006F /* Cells */,
 				F1EB7E632740762C0014006F /* Network */,
@@ -199,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				F1EB7E65274076BD0014006F /* LobbyViewController.swift */,
+				582B4B35274ABC8700EF4CA8 /* RestaurantsViewController.swift */,
 				55B83FC32749F27100F35C98 /* ProfileViewController.swift */,
 				55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */,
 				AD741FA127449FC40032822D /* PostViewController.swift */,
@@ -209,6 +241,7 @@
 		F1EB7E632740762C0014006F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				582B4B3B274ABD4400EF4CA8 /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +249,7 @@
 		F1EB7E642740764D0014006F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				582B4B39274ABD1C00EF4CA8 /* RestaurantCell.swift */,
 				F1C8A3A92744B36600229615 /* TableCell.swift */,
 			);
 			path = Cells;
@@ -224,6 +258,9 @@
 		F1EB7E67274076F10014006F /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				582B4B41274ACAB100EF4CA8 /* 4762-food-carousel.json */,
+				582B4B3D274ABD6A00EF4CA8 /* YelpStars.swift */,
+				582B4B3F274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -339,6 +376,7 @@
 			files = (
 				ADE991192739DFDE0098884A /* LaunchScreen.storyboard in Resources */,
 				ADE991162739DFDE0098884A /* Assets.xcassets in Resources */,
+				582B4B42274ACAB100EF4CA8 /* 4762-food-carousel.json in Resources */,
 				ADE991142739DFD60098884A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +505,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582B4B3A274ABD1C00EF4CA8 /* RestaurantCell.swift in Sources */,
+				582B4B3E274ABD6A00EF4CA8 /* YelpStars.swift in Sources */,
+				582B4B38274ABCD300EF4CA8 /* Restaurant.swift in Sources */,
+				582B4B40274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift in Sources */,
+				582B4B36274ABC8700EF4CA8 /* RestaurantsViewController.swift in Sources */,
         AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
 				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
 				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
@@ -476,6 +519,7 @@
 				55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */,
 				F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */,
 				ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */,
+				582B4B3C274ABD4400EF4CA8 /* API.swift in Sources */,
 				9122E49A274B210F001D6079 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
