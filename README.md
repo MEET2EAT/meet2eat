@@ -18,7 +18,7 @@
 #### Build Progress Walkthrough
 
 <img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='unit11_lobby' title='Build Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
 <img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
