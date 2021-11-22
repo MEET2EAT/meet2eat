@@ -31,6 +31,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
         query.limit = 20
+        query.order(byDescending: "createdAt")
         
         query.findObjectsInBackground{ (posts, error) in
             if posts != nil {
@@ -41,12 +42,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         
         let user = post["author"] as! PFUser
         cell.usernameLabel.text = user.username
