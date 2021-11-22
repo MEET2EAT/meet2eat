@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ktt-Ji-wbB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -290,6 +290,13 @@
                                     <action selector="onSubmitButton:" destination="ktt-Ji-wbB" eventType="touchUpInside" id="zGA-Vp-u57"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-fh-KdI">
+                                <rect key="frame" x="106" y="556" width="239" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SWH-Bu-PFb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -297,6 +304,7 @@
                     <navigationItem key="navigationItem" id="nuD-Ia-Oc3"/>
                     <connections>
                         <outlet property="commentField" destination="sNj-6y-fVd" id="hOK-iB-XTx"/>
+                        <outlet property="imageInputAlert" destination="fg8-fh-KdI" id="YWF-Rw-xff"/>
                         <outlet property="imageView" destination="Rbh-uC-dzw" id="umK-zd-pDA"/>
                     </connections>
                 </viewController>
