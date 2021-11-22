@@ -29,6 +29,7 @@
 <img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 <img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
 ![](https://i.imgur.com/LvEJLYV.gif)
 ![](https://i.imgur.com/AJEJ5A2.gif)
 
