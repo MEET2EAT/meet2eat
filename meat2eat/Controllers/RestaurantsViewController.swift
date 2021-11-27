@@ -147,15 +147,15 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     
     
     // ––––– TODO: Send restaurant object to DetailViewController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        if let indexPath = tableView.indexPath(for: cell) {
-//            let r = filteredRestaurants[indexPath.row]
-//            let detailViewController = segue.destination as! RestaurantDetailViewController
-//            detailViewController.r = r
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let cell = sender as! UITableViewCell
+//        if let indexPath = tableView.indexPath(for: cell) {
+////            let r = filteredRestaurants[indexPath.row]
+////            let detailViewController = segue.destination as! RestaurantDetailViewController
+////            detailViewController.r = r
+//        }
+//
+//    }
     
 }
 
@@ -191,6 +191,21 @@ extension RestaurantsViewController: UISearchBarDelegate {
        tableView.reloadData()
     }
     
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let r = filteredRestaurants[indexPath.row]
+            let detailViewController = segue.destination as! HostViewController
+            detailViewController.r = r
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 }

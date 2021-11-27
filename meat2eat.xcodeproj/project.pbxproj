@@ -22,6 +22,7 @@
 		9122E498274B0231001D6079 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E497274B0231001D6079 /* FeedViewController.swift */; };
 		9122E49A274B210F001D6079 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E499274B210F001D6079 /* PostCell.swift */; };
 		AD741FA227449FC40032822D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741FA127449FC40032822D /* PostViewController.swift */; };
+		AD9F13632752C59D001F0B05 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F13622752C59D001F0B05 /* HostViewController.swift */; };
 		ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910C2739DFD60098884A /* AppDelegate.swift */; };
 		ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910E2739DFD60098884A /* SceneDelegate.swift */; };
 		ADE991142739DFD60098884A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE991122739DFD60098884A /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		9122E499274B210F001D6079 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		92BFE284ACB68276F39BB03C /* Pods-meat2eatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.release.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD741FA127449FC40032822D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		AD9F13622752C59D001F0B05 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		ADE991092739DFD60098884A /* meat2eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meat2eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE9910C2739DFD60098884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE9910E2739DFD60098884A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				55B83FC32749F27100F35C98 /* ProfileViewController.swift */,
 				55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */,
 				AD741FA127449FC40032822D /* PostViewController.swift */,
+				AD9F13622752C59D001F0B05 /* HostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				55B83FC6274A581D00F35C98 /* ProfileSettingViewController.swift in Sources */,
 				55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */,
 				F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */,
+				AD9F13632752C59D001F0B05 /* HostViewController.swift in Sources */,
 				ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */,
 				582B4B3C274ABD4400EF4CA8 /* API.swift in Sources */,
 				9122E49A274B210F001D6079 /* PostCell.swift in Sources */,
