@@ -23,6 +23,7 @@
 <img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 <img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+![](https://i.imgur.com/Mc2Eudz.gif)
 
 ### Unit 10
 - [x] Work distribution for each team member.
