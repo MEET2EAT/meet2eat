@@ -46,6 +46,7 @@ class HostViewController: UIViewController {
             let y = addressFul[1] as! String
             Table2Meet["location"] = x + y
         }
+        Table2Meet["current"] = 0
         Table2Meet["slots"] = slots.text!
         Table2Meet["dateMeet"] = dateMeet.text!
         Table2Meet["detailMeet"] = detailMeet.text!
