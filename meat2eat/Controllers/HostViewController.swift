@@ -36,6 +36,7 @@ class HostViewController: UIViewController {
 
 
     @IBAction func OnSetTableButton(_ sender: Any) {
+        /*
        let Table2Meet = PFObject(className: "Table2Meet")
        if(r != nil){ 
             Table2Meet["ResName"] = r.name
@@ -59,7 +60,8 @@ class HostViewController: UIViewController {
         } else {
                 // There was a problem, check error.description
                 print("error!")
-        }     
+        }  
+        */
     }
     
     @IBAction func onBackButton(_ sender: Any) {
