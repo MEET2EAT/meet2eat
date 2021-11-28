@@ -13,6 +13,7 @@ class PostViewController: UIViewController , UIImagePickerControllerDelegate,UIN
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var imageInputAlert: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,16 +22,19 @@ class PostViewController: UIViewController , UIImagePickerControllerDelegate,UIN
     
     @IBAction func onSubmitButton(_ sender: Any) {
         let post = PFObject(className: "Posts")
-
         post["caption"] = commentField.text!
         let imageData = imageView.image!.pngData()
-        if((imageData)!.isEmpty){
+        
+        let x = UIImage(named: "image_placeholder")
+        
+        if(imageData == x!.pngData()){
+            imageInputAlert.text = "Please Add Image!!!"
+            print("add image")
+        }else{
             let file = PFFileObject(name:"image.png",data: imageData!)
             post["image"] = file
-            
-            //post["author"] = PFUser.current()!
+            post["author"] = PFUser.current()!
             //change back to this after have user account
-            post["author"] = "loc"
             post.saveInBackground { (succeeded, error)  in
                 if (succeeded) {
                     // The object has been saved.
@@ -41,7 +45,6 @@ class PostViewController: UIViewController , UIImagePickerControllerDelegate,UIN
                     print("error!")
                 }
             }
-            
         }
     }
     //click on the image place

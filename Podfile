@@ -9,6 +9,8 @@ target 'meat2eat' do
 	pod "Parse"
 	pod "AlamofireImage"
 	pod "MessageInputBar"
+	pod "SkeletonView"
+	pod 'lottie-ios'
 
   target 'meat2eatTests' do
     inherit! :search_paths
