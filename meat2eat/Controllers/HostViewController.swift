@@ -36,12 +36,29 @@ class HostViewController: UIViewController {
 
 
     @IBAction func OnSetTableButton(_ sender: Any) {
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destination.
-            // Pass the selected object to the new view controller.
+       let Table2Meet = PFObject(className: "Table2Meet")
+       if(r != nil){ 
+            Table2Meet["ResName"] = r.name
+            Table2Meet["ResImage"] = r.imageURL!
+            ///.af.setImage(withURL: r.imageURL!)
+            var addressFul = r.location["display_address"]! as! NSArray
+            let x = addressFul[0] as! String
+            let y = addressFul[1] as! String
+            Table2Meet["location"] = x + y
         }
-        //self.dismiss(animated: true, completion: nil)
-
+        Table2Meet["slots"] = slots.text!
+        Table2Meet["dateMeet"] = dateMeet.text!
+        Table2Meet["detailMeet"] = detailMeet.text!
+        Table2Meet["host"] = PFUser.current()!
+        Table2Meet.saveInBackground { (succeeded, error)  in
+        if (succeeded) {
+            // The object has been saved.
+            self.dismiss(animated: true, completion: nil)
+            print("Saved")
+        } else {
+                // There was a problem, check error.description
+                print("error!")
+        }     
     }
     
     @IBAction func onBackButton(_ sender: Any) {
