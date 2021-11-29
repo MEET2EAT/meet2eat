@@ -18,7 +18,7 @@
 #### Build Progress Walkthrough
 <img src='unit12_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
 <img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='unit12_filter.png' title='Video Walkthrough' width='250' alt='Build Walkthrough' />
+<img src='unit12_filter.gif' title='Video Walkthrough' width='250' alt='Build Walkthrough' />
 
 ### Unit 11
 - [x] Updated status of issues in Project board. (2pts)
