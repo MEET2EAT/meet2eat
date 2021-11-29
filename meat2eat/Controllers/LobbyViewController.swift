@@ -13,6 +13,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     var tables = [PFObject]()
+    var capacityFilter = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // className and includeKey might need to adjust
         let query = PFQuery(className: "Tables")
         query.includeKey("host")
+        query.whereKey("max", lessThan: capacityFilter)
         query.limit = 20
         
         query.findObjectsInBackground{ (tables, error) in
@@ -49,12 +51,17 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let table = tables[indexPath.row]
         // unit 5 video parstagram 6
         cell.restaurantNameLabel.text = table["restaurantName"] as? String
-        cell.restaurantLocLabel.text = table["restaurantLoc"] as? String     // location is array ** need to change it later
-        cell.currentLabel.text = table["current"] as? String
-        cell.maxLabel.text = table["max"] as? String
+        cell.restaurantLocLabel.text = table["restaurantLoc"] as? String
+        cell.currentLabel.text = "\(table["current"]!)"
+        cell.maxLabel.text = "\(table["max"]!)"
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTable = tables[indexPath.row]
+        print("\(selectedTable["current"]!)")
     }
     
     /*

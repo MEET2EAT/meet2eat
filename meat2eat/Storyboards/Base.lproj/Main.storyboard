@@ -182,7 +182,7 @@
                                             <outlet property="restaurantLocLabel" destination="Hyu-NC-zNa" id="bLY-dz-N3F"/>
                                             <outlet property="restaurantNameLabel" destination="xy5-Gb-zoK" id="svy-e6-ETe"/>
                                             <outlet property="tableImg" destination="ZnG-3a-trA" id="3fO-P8-6uS"/>
-                                            <segue destination="eoq-KE-RPA" kind="presentation" modalPresentationStyle="fullScreen" id="fy7-Ge-dhM"/>
+                                            <segue destination="eoq-KE-RPA" kind="presentation" id="fy7-Ge-dhM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -201,7 +201,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Filter"/>
                                 <connections>
-                                    <segue destination="pZa-qr-6up" kind="presentation" modalPresentationStyle="fullScreen" id="i4i-dZ-c9I"/>
+                                    <segue destination="pZa-qr-6up" kind="presentation" id="i4i-dZ-c9I"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -401,21 +401,78 @@
             <objects>
                 <viewController id="pZa-qr-6up" customClass="FilterViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iGW-Fc-6hd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="modify the interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLf-M0-ONg">
-                                <rect key="frame" x="131" y="400" width="152" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4Z-BX-B30">
+                                <rect key="frame" x="140" y="81" width="134" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Capacity: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjY-W1-H37">
+                                <rect key="frame" x="20" y="129" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ke-X1-YSl">
+                                <rect key="frame" x="183" y="122" width="211" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWm-X7-Fzn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Filters" id="3WT-ID-V0T">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="fEm-46-1gP">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DaV-NJ-c13">
+                                                <rect key="frame" x="20" y="11" width="92" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            </button>
+                                            <connections>
+                                                <action selector="cancelBtn:" destination="pZa-qr-6up" id="SLo-Hu-0yC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="r11-80-OSI">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="C4F-mB-Wc6">
+                                                <rect key="frame" x="302" y="11" width="92" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Apply"/>
+                                            </button>
+                                            <connections>
+                                                <action selector="applyBtn:" destination="pZa-qr-6up" id="kLW-Hf-ZoO"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EJq-dD-x0X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4Z-BX-B30" firstAttribute="top" secondItem="EJq-dD-x0X" secondAttribute="top" constant="81" id="C1a-2t-aM4"/>
+                            <constraint firstItem="0Ke-X1-YSl" firstAttribute="top" secondItem="j4Z-BX-B30" secondAttribute="bottom" constant="20" id="Ltj-cF-xBr"/>
+                            <constraint firstItem="NjY-W1-H37" firstAttribute="leading" secondItem="EJq-dD-x0X" secondAttribute="leading" constant="20" id="euj-gj-rp5"/>
+                            <constraint firstItem="j4Z-BX-B30" firstAttribute="centerX" secondItem="iGW-Fc-6hd" secondAttribute="centerX" id="gKk-g3-g4C"/>
+                            <constraint firstItem="0Ke-X1-YSl" firstAttribute="leading" secondItem="NjY-W1-H37" secondAttribute="trailing" constant="8" id="n4V-ng-dtG"/>
+                            <constraint firstItem="EJq-dD-x0X" firstAttribute="trailing" secondItem="0Ke-X1-YSl" secondAttribute="trailing" constant="20" id="q0U-ax-MDl"/>
+                            <constraint firstItem="NjY-W1-H37" firstAttribute="top" secondItem="j4Z-BX-B30" secondAttribute="bottom" constant="27" id="tXL-Rl-agP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JvI-Iy-ZpO"/>
+                    <connections>
+                        <outlet property="capacityField" destination="0Ke-X1-YSl" id="U2m-V1-cFE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXd-m6-fly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,7 +483,7 @@
             <objects>
                 <viewController id="PMO-9G-Xd6" customClass="HostViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85x-qq-24n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08q-73-WH9">
@@ -483,7 +540,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-O9-0hn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Create table" id="mlp-uP-TZy">
@@ -677,9 +734,9 @@
         <!--Table Info View Controller-->
         <scene sceneID="XxN-GL-xfa">
             <objects>
-                <viewController id="eoq-KE-RPA" customClass="TableInfoViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableInfoViewController" id="eoq-KE-RPA" customClass="TableInfoViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6YJ-vb-iWY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ikemen Kuma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-qi-ctu">
@@ -928,8 +985,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q7x-Yl-qh5"/>
-        <segue reference="2wB-gL-0aZ"/>
+        <segue reference="aFw-8d-RnF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SleepyBear" width="86.666664123535156" height="93.333335876464844"/>

@@ -9,13 +9,24 @@ import UIKit
 
 class FilterViewController: UIViewController {
 
+    @IBOutlet weak var capacityField: UITextField!
+    var maxFilter = LobbyViewController().capacityFilter
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        capacityField.text = "\(maxFilter)"
     }
     
-
+    @IBAction func cancelBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func applyBtn(_ sender: Any) {
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
