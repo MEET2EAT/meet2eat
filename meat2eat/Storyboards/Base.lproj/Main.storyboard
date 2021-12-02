@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8et-ub-81d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -455,18 +455,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search Restaurants" translatesAutoresizingMaskIntoConstraints="NO" id="W5Q-h9-LB8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="drA-De-UwF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="drA-De-UwF">
+                                <rect key="frame" x="0.0" y="109" width="414" height="787"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" id="0uz-Ez-w9S" customClass="RestaurantCell" customModule="meat2eat" customModuleProvider="target">
@@ -592,17 +583,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbZ-Z6-PDg">
+                                <rect key="frame" x="148" y="30" width="118.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" systemColor="tintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" placeholder="Search Restaurants" translatesAutoresizingMaskIntoConstraints="NO" id="W5Q-h9-LB8">
+                                <rect key="frame" x="0.0" y="57.5" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LBM-eZ-WOS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="drA-De-UwF" secondAttribute="bottom" id="2gj-c9-UgI"/>
-                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="top" secondItem="cia-5d-uOX" secondAttribute="top" id="2j8-RR-nUx"/>
-                            <constraint firstItem="drA-De-UwF" firstAttribute="trailing" secondItem="LBM-eZ-WOS" secondAttribute="trailing" id="XJy-pv-LB1"/>
-                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="trailing" secondItem="LBM-eZ-WOS" secondAttribute="trailing" id="cZd-ni-BXW"/>
-                            <constraint firstItem="drA-De-UwF" firstAttribute="top" secondItem="cia-5d-uOX" secondAttribute="top" id="rm1-DY-2oO"/>
-                            <constraint firstItem="drA-De-UwF" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" id="tlo-z3-3Mp"/>
-                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" id="yQE-bG-sH4"/>
+                            <constraint firstItem="RbZ-Z6-PDg" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" constant="148" id="4gv-WG-nHS"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="top" secondItem="RbZ-Z6-PDg" secondAttribute="bottom" id="ELC-uM-aoV"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="trailing" secondItem="LBM-eZ-WOS" secondAttribute="trailing" id="cWl-hI-eH5"/>
+                            <constraint firstItem="LBM-eZ-WOS" firstAttribute="trailing" secondItem="RbZ-Z6-PDg" secondAttribute="trailing" constant="147.5" id="vOw-cV-F5F"/>
+                            <constraint firstItem="W5Q-h9-LB8" firstAttribute="leading" secondItem="LBM-eZ-WOS" secondAttribute="leading" id="zE8-gD-U90"/>
+                            <constraint firstItem="RbZ-Z6-PDg" firstAttribute="top" secondItem="cia-5d-uOX" secondAttribute="top" constant="30" id="zmy-RE-u1e"/>
                         </constraints>
                     </view>
                     <connections>
@@ -614,26 +621,13 @@
             </objects>
             <point key="canvasLocation" x="102.89855072463769" y="2362.5"/>
         </scene>
-        <!--Table Info View Controller-->
+        <!--Table Info Ikemen View Controller-->
         <scene sceneID="XxN-GL-xfa">
             <objects>
-                <viewController id="eoq-KE-RPA" customClass="TableInfoViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eoq-KE-RPA" customClass="TableInfoIkemenViewController" customModule="meat2eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6YJ-vb-iWY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ikemen Kuma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-qi-ctu">
-                                <rect key="frame" x="151" y="398" width="112" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SleepyBear" translatesAutoresizingMaskIntoConstraints="NO" id="GJX-a1-maL">
-                                <rect key="frame" x="0.0" y="-8" width="394" height="398"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Dhr-9A-XBX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -868,11 +862,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SleepyBear" width="86.666664123535156" height="93.333335876464844"/>
-        <image name="placeimg_100_100_arch" width="100" height="100"/>
         <image name="image_placeholder" width="375" height="375"/>
+        <image name="placeimg_100_100_arch" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

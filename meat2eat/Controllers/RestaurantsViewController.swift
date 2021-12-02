@@ -31,7 +31,7 @@ class RestaurantsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(restaurantsArray)
+        
         startAnimations()
         // Table View
         tableView.visibleCells.forEach { $0.showSkeleton() }
@@ -46,6 +46,7 @@ class RestaurantsViewController: UIViewController {
         getAPIData()
         
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
+    
         tableView.refreshControl = yelpRefresh
     }
     
@@ -56,7 +57,7 @@ class RestaurantsViewController: UIViewController {
             guard let restaurants = restaurants else {
                 return
             }
-            
+            print(restaurants);
             self.restaurantsArray = restaurants
             self.filteredRestaurants = restaurants
             self.tableView.reloadData()
@@ -92,7 +93,7 @@ extension RestaurantsViewController: SkeletonTableViewDataSource {
         animationView!.loopMode = .loop
 
         // Animation speed - Larger number = faste
-        animationView!.animationSpeed = 5
+        animationView!.animationSpeed = 10
 
         //  Play animation
         animationView!.play()
@@ -136,7 +137,7 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.showSkeleton()
         
         // Stop animation after like .5 seconds
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
             cell.stopSkeletonAnimation()
             cell.hideSkeleton()
         }
