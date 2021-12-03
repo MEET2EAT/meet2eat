@@ -26,35 +26,36 @@ class TableInfoViewController: UIViewController{
     
     @IBOutlet weak var TotalSlots: UILabel!
     let totalSlots_ = 9
-    
+    let filledSlots = 0;
+    let tableId = "1zBlQfNccR"
+    var table2Meet = [PFObject]()
+
     /// <#Description#>
     override func viewDidLoad() {
         super.viewDidLoad()
         slotsCollectionView.delegate = self
         slotsCollectionView.dataSource = self
-        //let flowLayout = UICollectionViewFlowLayout()
-        //Create empty view cells
-        
-        
-        /*self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "SlotCell")
-        collectionView.layer.delegate = self
-        collectionView.dataSource = self
-                collectionView.backgroundColor = UIColor.cyan
-        self.view.addSubview(collectionView)
-        
+        loadGuest()
+   
         // Do any additional setup after loading the view.*/
     }
     
+    @IBAction func joinOnAction(_ sender: Any) {
+        print("Join on Action-----------")
+        loadGuest()
+        //print(self.table2Meet)
+        
+        let table = self.table2Meet[0]
+        print(table)
+        
+        let guestsID = (table["guestsId"] as! [String]) ?? []
+        print(guestsID[0])
+    }
+    func saveUser(){
+        
+    }
     func loadInfoTable(){
-        let Table2Meet = PFObject(className:"Table2Meet")
-        
-        let user = PFUser.current()
-        
-        if(user){
-            print(user.getstring())
-        }
-       
+               
     }
 
     /*
@@ -66,11 +67,28 @@ class TableInfoViewController: UIViewController{
         // Pass the selected object to the new view controller.
     }
     */
-
     
-    
+    func loadGuest(){
+        
+       
+        let query = PFQuery(className: "Table2Meet")
+        query.includeKey("users")
+        query.whereKey("objectId", contains: tableId)
+        query.limit = 1
+     
+        query.findObjectsInBackground{(Table, error) in
+                
+                self.table2Meet = Table!
+                self.slotsCollectionView.reloadData()
+            }
+        
+       
+    }
+        
+         
     
 }
+
 
 extension TableInfoViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
          func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
