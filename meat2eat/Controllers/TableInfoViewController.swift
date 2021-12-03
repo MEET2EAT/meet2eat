@@ -96,13 +96,25 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             if(self.filledSlots > indexPath.row){
                 print((self.filledSlots > indexPath.row))
 
-                let query = PFQuery(className: "User")
-                query.includeKeys(["username", "image"])
-                print("SEEIDDD")
-                print(self.userIdList[indexPath.row])
-                //query.whereKey("objectId", contains: self.userIdList[indexPath.row])
-                query.limit = 1
+//                 let query = PFQuery(className: "User")
+//                 query.includeKeys(["username", "image"])
+//                 print("SEEIDDD")
+//                 print(self.userIdList[indexPath.row])
+//                 //query.whereKey("objectId", contains: self.userIdList[indexPath.row])
+//                 query.limit = 1
              
+                var query = PFUser.query()
+        query!.whereKey("username", equalTo:"loc")
+        
+        do {
+            let users: [PFObject] = try query?.findObjects() as! [PFObject]
+            print(users)
+        } catch {
+            print(error)
+        }
+                
+                
+                
                 query.findObjectsInBackground{(user_, error) in
                     //print("DDDDCELLLLLLLLLLLL")
                     //print(user_)
