@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eoq-KE-RPA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -640,7 +640,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Join"/>
                                 <connections>
-                                    <action selector="joinOnAction:" destination="eoq-KE-RPA" eventType="touchUpInside" id="HWa-dg-2Rg"/>
+                                    <action selector="JoinOnAcction:" destination="eoq-KE-RPA" eventType="touchUpInside" id="PuZ-cB-GYD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-la-sup">
@@ -824,13 +824,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="81E-Sm-gXn"/>
                     <connections>
-                        <outlet property="FilledSlots" destination="dLB-bE-ZaE" id="ySo-wN-1En"/>
-                        <outlet property="RestaurantLocation" destination="XhV-Ur-KRg" id="lQj-89-TPx"/>
-                        <outlet property="RestaurantName" destination="RJZ-pp-Y1X" id="sc8-36-GAt"/>
-                        <outlet property="TableApproved" destination="0UX-cJ-qfW" id="gfg-2J-rat"/>
-                        <outlet property="TableStatus" destination="Jlz-S5-GOw" id="elU-b5-KCC"/>
-                        <outlet property="TotalSlots" destination="57l-gX-Fdb" id="B5p-xT-9Sc"/>
-                        <outlet property="slotsCollectionView" destination="4R9-oY-ju7" id="gbB-iH-y2l"/>
+                        <outlet property="FilledSlots" destination="dLB-bE-ZaE" id="Hj4-S6-WQa"/>
+                        <outlet property="RestaurantLocation" destination="XhV-Ur-KRg" id="OAe-Zr-pfb"/>
+                        <outlet property="RestaurantName" destination="RJZ-pp-Y1X" id="RyA-bv-ePt"/>
+                        <outlet property="TableApproved" destination="0UX-cJ-qfW" id="F64-QQ-hh6"/>
+                        <outlet property="TableStatus" destination="Jlz-S5-GOw" id="2jf-AG-hGT"/>
+                        <outlet property="TotalSlots" destination="57l-gX-Fdb" id="1PO-cQ-deP"/>
+                        <outlet property="slotsCollectionView" destination="4R9-oY-ju7" id="ldO-AU-4IV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vx-hW-ser" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

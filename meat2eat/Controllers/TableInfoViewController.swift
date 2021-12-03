@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class TableInfoViewController: UIViewController{
+class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
     
     
     
@@ -26,30 +26,30 @@ class TableInfoViewController: UIViewController{
     
     @IBOutlet weak var TotalSlots: UILabel!
     let totalSlots_ = 9
-    let filledSlots = 0;
+    var filledSlots = 0;
     let tableId = "1zBlQfNccR"
     var table2Meet = [PFObject]()
-
+    var userIdList = [String]()
     /// <#Description#>
+    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         slotsCollectionView.delegate = self
         slotsCollectionView.dataSource = self
-        loadGuest()
-   
+        //self.loadGuest()
+        
+        //slotsCollectionView.reloadData()
+      
         // Do any additional setup after loading the view.*/
     }
     
+    
+    
+    
     @IBAction func joinOnAction(_ sender: Any) {
         print("Join on Action-----------")
-        loadGuest()
-        //print(self.table2Meet)
+       
         
-        let table = self.table2Meet[0]
-        print(table)
-        
-        let guestsID = (table["guestsId"] as! [String]) ?? []
-        print(guestsID[0])
     }
     func saveUser(){
         
@@ -68,39 +68,61 @@ class TableInfoViewController: UIViewController{
     }
     */
     
-    func loadGuest(){
-        
-       
-        let query = PFQuery(className: "Table2Meet")
-        query.includeKey("users")
-        query.whereKey("objectId", contains: tableId)
-        query.limit = 1
      
-        query.findObjectsInBackground{(Table, error) in
-                
-                self.table2Meet = Table!
-                self.slotsCollectionView.reloadData()
-            }
-        
-       
-    }
-        
-         
-    
-}
-
-
-extension TableInfoViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
-         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return totalSlots_;
         }
         
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTable2Eat()
+        
+        let query = PFQuery(className: "user")
+       // query.includeKey("users"
+        query.limit = 1
+     
+        query.findObjectsInBackground{(Table, error) in
+                print("GET USER")
+                print(Table)
+            }
+    }
+    
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlotCell", for: indexPath) as! SlotCollectionViewCell
-            
-            //cell.UserImage.af_setImage(withURL: <#T##URL#>)
-            cell.UserName.text = "Ikemen Kuma"
-            //cell.backgroundColor = UIColor.green
+             print("Load cell-------")
+
+         
+         print(indexPath.row)
+            if(self.filledSlots > indexPath.row){
+                print((self.filledSlots > indexPath.row))
+
+                let query = PFQuery(className: "User")
+                query.includeKeys(["username", "image"])
+                print("SEEIDDD")
+                print(self.userIdList[indexPath.row])
+                //query.whereKey("objectId", contains: self.userIdList[indexPath.row])
+                query.limit = 1
+             
+                query.findObjectsInBackground{(user_, error) in
+                    //print("DDDDCELLLLLLLLLLLL")
+                    //print(user_)
+                       // var userOj =  [PFObject]()
+                       // userOj = user_!
+                      //  let userTuple = userOj[0]
+                                          
+                      //  cell.UserName.text = userTuple["username"] as? String
+                        
+                      //  let imageFile = userTuple["image"] as!PFFileObject
+                      //  let urlString = imageFile.url!
+                      //  let url = URL(string: urlString)!
+                      //  cell.UserImage.af.setImage(withURL: url)
+                        
+                    }
+                
+                   //cell.UserImage.af_setImage(withURL: <#T##URL#>)
+                    //cell.backgroundColor = UIColor.green
+             }
+        
             return cell
         }
     
@@ -113,5 +135,45 @@ extension TableInfoViewController: UICollectionViewDataSource, UICollectionViewD
         return 1;
     }
     
-    
+    func loadGuest(userId_: String) -> Array<String>{
+        var userInfo = [String]()
+        let query = PFQuery(className: "User")
+        query.includeKey("users")
+        query.whereKey("objectId", contains: userId_)
+        query.limit = 1
+     
+        query.findObjectsInBackground{(user_, error) in
+                let userOj = user_!
+                let userTuple = userOj[0]
+                userInfo[0] = userTuple["username"] as! String
+                userInfo[1] = userTuple["image"] as! String
+                self.filledSlots = self.userIdList.count
+                print(self.filledSlots)
+                self.slotsCollectionView.reloadData()
+            }
+        return userInfo
+    }
+    func loadTable2Eat(){
+        
+       
+        let query = PFQuery(className: "Table2Meet")
+        query.includeKey("users")
+        query.whereKey("objectId", contains: tableId)
+        query.limit = 1
+     
+        query.findObjectsInBackground{(Table, error) in
+                
+                self.table2Meet = Table!
+            
+                let table = self.table2Meet[0]
+                               
+                self.userIdList = (table["guestsId"] as! [String]) ?? []
+                self.filledSlots = self.userIdList.count
+                print(self.filledSlots)
+                self.slotsCollectionView.reloadData()
+            }
+        
+       
+    }
+       
 }
