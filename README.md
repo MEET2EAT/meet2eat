@@ -8,6 +8,13 @@
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
 ## Weekly User Story Check-off
+### Unit 13
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
 
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
