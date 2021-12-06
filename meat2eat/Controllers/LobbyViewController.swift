@@ -9,7 +9,8 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FilterDataDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var tables = [PFObject]()
@@ -64,14 +65,18 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         print("\(selectedTable["current"]!)")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func setCapacity(newMax: Int) {
+        capacityFilter = newMax
+        print(newMax)
+        print(capacityFilter)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "FilterSegue" {
+            let filterVc: FilterViewController = segue.destination as! FilterViewController
+            filterVc.filterDelegate = self
+        }
     }
-    */
-
 }

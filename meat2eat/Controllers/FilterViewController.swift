@@ -7,10 +7,16 @@
 
 import UIKit
 
+//Protocol used for send filter data back
+protocol FilterDataDelegate: AnyObject {
+    func setCapacity(newMax: Int)
+}
+
 class FilterViewController: UIViewController {
 
     @IBOutlet weak var capacityField: UITextField!
     var maxFilter = LobbyViewController().capacityFilter
+    weak var filterDelegate: FilterDataDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +29,13 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func applyBtn(_ sender: Any) {
+        filterDelegate?.setCapacity(newMax: Int(capacityField.text!) ?? maxFilter)
+        print(capacityField.text!)
+        print(LobbyViewController().capacityFilter)
         
+        
+        
+        dismiss(animated: true, completion: nil)
     }
     
     
