@@ -20,6 +20,7 @@ Host
 <img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 Table Info
 <img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
 - [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
