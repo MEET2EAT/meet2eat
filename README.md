@@ -15,7 +15,9 @@
 - [x] Gifs created to show build progress and added to README. (3pts)
 
 #### Build Progress Walkthrough
-
+<img src='w13.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+<br >Host<br> 
+<img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
 - [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
