@@ -120,9 +120,14 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             let guestListId = self.table2Meet[0]["guestsId"] as! [String]
             if guestListId.contains(userString){
                 self.JoinButton.setTitle("Leave", for: .normal)
-                
+                self.JoinButton.action(for: <#T##CALayer#>, forKey: <#T##String#>){
+                    
+                }
             }else{
                 self.JoinButton.setTitle("Join", for: .normal)
+                self.JoinButton.action(for: <#T##CALayer#>, forKey: <#T##String#>){
+                    
+                }
             }
         }
     }
