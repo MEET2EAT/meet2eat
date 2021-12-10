@@ -10,14 +10,12 @@ import Parse
 
 class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
     
-    
-    
-
-    @IBOutlet weak var TableStatus: UILabel!
-    @IBOutlet weak var TableApproved: UILabel!
-    
+    @IBOutlet weak var MeetTimeLabel: UILabel!
+    @IBOutlet weak var MeetDateLabel: UILabel!
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var RestaurantLocation: UILabel!
+    
+    @IBOutlet weak var JoinButton: UIButton!
     
     @IBOutlet weak var FilledSlots: UILabel!
     
@@ -30,6 +28,8 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     let tableId = "1zBlQfNccR"
     var table2Meet = [PFObject]()
     var userIdList = [String]()
+    var host = PFUser();
+    
     /// <#Description#>
     ///
     override func viewDidLoad() {
@@ -44,18 +44,10 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    
-    
     @IBAction func joinOnAction(_ sender: Any) {
         print("Join on Action-----------")
        
         
-    }
-    func saveUser(){
-        
-    }
-    func loadInfoTable(){
-               
     }
 
     /*
@@ -80,10 +72,9 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlotCell", for: indexPath) as! SlotCollectionViewCell
-             print("Load cell-------")
-
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlotCell", for: indexPath) as! SlotCollectionViewCell
          
+         print("Load cell-------")
          print(indexPath.row)
             if(self.filledSlots > indexPath.row){
                 print((self.filledSlots > indexPath.row))
@@ -110,13 +101,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
                 } catch {
                     print(error)
                 }
-                
-                
-                    
-                
             }
-
-        
             return cell
         }
     
@@ -124,9 +109,24 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         return 1;
     }
     
+    func userInTableLoad(){
+        let user = PFUser.current()
+        //check if user is the host
+        if user == (self.table2Meet["host"] as! PFUser){
+            
+        }
+        
+        let userString = user?.objectId as! String
+        let guestListId = self.table2Meet[0]["guestsId"] as! [String]
+        if guestListId.contains(userString){
+            self.JoinButton.setTitle("Leave", for: .normal)
+        }else{
+            self.JoinButton.setTitle("Join", for: .normal)
+        }
+            
+    }
     func loadTable2Eat(){
         
-       
         let query = PFQuery(className: "Table2Meet")
         query.includeKey("users")
         query.whereKey("objectId", contains: tableId)
@@ -134,12 +134,15 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
      
         query.findObjectsInBackground{(Table, error) in
                 
-                self.table2Meet = Table!
+            self.table2Meet = Table!
+            let table = self.table2Meet[0]
+            print("ttabkbk")
+            print(table)
+            self.host  = table["host"] as! PFUser
+            var guestList = [String(describing:  self.host.objectId!)]
+            guestList.append(contentsOf: table["guestsId"] as! [String])
             
-                let table = self.table2Meet[0]
-                print("ttabkbk")
-                print(table)
-            self.userIdList = (table["guestsId"] as! [String])
+            self.userIdList = guestList
                 self.filledSlots = self.userIdList.count
             self.totalSlots_ = (table["slots"] as! Int)
                 print(self.filledSlots)
@@ -148,12 +151,9 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             self.FilledSlots.text = "\(self.userIdList.count)"
                 self.RestaurantName.text = "\(table["ResName"] as! String)"
             self.RestaurantLocation.text = "\(table["location"] as! String)"
-            self.TableApproved.text = "\(table["detailMeet"] as! String)"
-        
+            self.MeetTimeLabel.text = "\(table["detailMeet"] as! String)"
             self.slotsCollectionView.reloadData()
             }
-        
-       
     }
        
 }
