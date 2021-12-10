@@ -14,6 +14,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var MeetDateLabel: UILabel!
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var RestaurantLocation: UILabel!
+    @IBOutlet weak var HostnameLabel: UILabel!
     
     @IBOutlet weak var JoinButton: UIButton!
     
@@ -27,7 +28,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     var filledSlots = 0;
     let tableId = "1zBlQfNccR"
     var table2Meet = [PFObject]()
-    var userIdList = [String]()
+    var userList = [PFUser]()
     var host = PFUser();
     
     /// <#Description#>
@@ -44,12 +45,6 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     
-    @IBAction func joinOnAction(_ sender: Any) {
-        print("Join on Action-----------")
-       
-        
-    }
-
     /*
     // MARK: - Navigation
 
@@ -76,24 +71,27 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
          
          print("Load cell-------")
          print(indexPath.row)
+
             if(self.filledSlots > indexPath.row){
-                print((self.filledSlots > indexPath.row))
-
-             
-                let query = PFUser.query()
-                query!.whereKey("objectId", equalTo: self.userIdList[indexPath.row])
-                print(self.userIdList[indexPath.row])
                 do {
-                    let user_ = try query?.findObjects() as! [PFObject]
-
                     print("DDDDCELLLLLLLLLLLL")
+                   
+                    var user_ = PFUser();
+                    if(indexPath.row == 0){
+                        user_ = self.host
+                    }else if(self.userList.isEmpty == false){
+                        print("User________")
+                        user_ = self.userList[indexPath.row-1]
+
+                    }
                     print(user_)
-                    if(user_.isEmpty == false){
-                        let userTuple = user_[0]
-
-                        cell.UserName.text = userTuple["username"] as? String
-
-                        let imageFile = userTuple["image"] as!PFFileObject
+                    let query = PFUser.query()
+                    query?.whereKey("objectId", contains: user_.objectId)
+                    var userInfo = try query?.findObjects() as! [PFUser]
+                    
+                    if(userInfo.isEmpty == false){
+                       cell.UserName.text = userInfo[0]["username"] as? String
+                        let imageFile = userInfo[0]["image"] as!PFFileObject
                         let urlString = imageFile.url!
                         let url = URL(string: urlString)!
                         cell.UserImage.af.setImage(withURL: url)
@@ -104,7 +102,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             }
             return cell
         }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;
     }
@@ -120,16 +118,15 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             let guestListId = self.table2Meet[0]["guestsId"] as! [String]
             if guestListId.contains(userString){
                 self.JoinButton.setTitle("Leave", for: .normal)
-                self.JoinButton.action(for: <#T##CALayer#>, forKey: <#T##String#>){
-                    
-                }
+                
             }else{
                 self.JoinButton.setTitle("Join", for: .normal)
-                self.JoinButton.action(for: <#T##CALayer#>, forKey: <#T##String#>){
-                    
-                }
+                
             }
         }
+    }
+    @IBAction func backOnAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     func loadTable2Eat(){
         
@@ -145,19 +142,19 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             print("ttabkbk")
             print(table)
             self.host  = table["host"] as! PFUser
-            var guestList = [String(describing:  self.host.objectId!)]
-            guestList.append(contentsOf: table["guestsId"] as! [String])
+            if(table["guestsId"] != nil){
+                self.userList = table["guestsId"] as! [PFUser]
+            }
+            self.filledSlots = self.userList.count + 1
+            self.totalSlots_ = (table["slots"] as! Int) + 1
             
-            self.userIdList = guestList
-                self.filledSlots = self.userIdList.count
-            self.totalSlots_ = (table["slots"] as! Int)
-                print(self.filledSlots)
-                
+            self.HostnameLabel.text = "\(PFUser.current()?.username)'s"
             self.TotalSlots.text = "\(self.totalSlots_)"
-            self.FilledSlots.text = "\(self.userIdList.count)"
-                self.RestaurantName.text = "\(table["ResName"] as! String)"
+            self.FilledSlots.text = "\(self.filledSlots)"
+            self.RestaurantName.text = "\(table["ResName"] as! String)"
             self.RestaurantLocation.text = "\(table["location"] as! String)"
             self.MeetTimeLabel.text = "\(table["detailMeet"] as! String)"
+            
             self.slotsCollectionView.reloadData()
             }
     }
