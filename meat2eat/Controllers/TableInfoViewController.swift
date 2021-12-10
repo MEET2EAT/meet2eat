@@ -112,18 +112,19 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     func userInTableLoad(){
         let user = PFUser.current()
         //check if user is the host
-        if user == (self.table2Meet["host"] as! PFUser){
-            
-        }
-        
-        let userString = user?.objectId as! String
-        let guestListId = self.table2Meet[0]["guestsId"] as! [String]
-        if guestListId.contains(userString){
-            self.JoinButton.setTitle("Leave", for: .normal)
+        if( user?.objectId! == self.host.objectId!){
+            self.JoinButton.isEnabled = false;
         }else{
-            self.JoinButton.setTitle("Join", for: .normal)
+            self.JoinButton.isEnabled = true;
+            let userString = user?.objectId as! String
+            let guestListId = self.table2Meet[0]["guestsId"] as! [String]
+            if guestListId.contains(userString){
+                self.JoinButton.setTitle("Leave", for: .normal)
+                
+            }else{
+                self.JoinButton.setTitle("Join", for: .normal)
+            }
         }
-            
     }
     func loadTable2Eat(){
         
