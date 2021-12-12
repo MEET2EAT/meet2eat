@@ -24,7 +24,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         commentBar.inputTextView.placeholder = "Add a comment..."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -47,7 +46,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return showsCommentBar
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -63,7 +61,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         //Create the comment
         let comment = PFObject(className: "Comments")
@@ -150,7 +147,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
-    
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -159,5 +155,4 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         delegate.window?.rootViewController = loginViewController
     }
-    
 }
