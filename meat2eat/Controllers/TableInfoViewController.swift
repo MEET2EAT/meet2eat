@@ -30,8 +30,8 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var TotalSlots: UILabel!
     var totalSlots_ = 12
-    var filledSlots = 0;
-    var tableId = "1zBlQfNccR"
+    var filledSlots = 0
+    var tableId: String!
     var table2Meet = [PFObject]()
     var userList = [PFUser]()
     var host = PFUser()
@@ -180,7 +180,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let query = PFQuery(className: "Table2Meet")
         query.includeKey("users")
-        query.whereKey("objectId", contains: tableId)
+        query.whereKey("objectId", contains: tableId!)
         query.limit = 1
         
         query.findObjectsInBackground{(Table, error) in
