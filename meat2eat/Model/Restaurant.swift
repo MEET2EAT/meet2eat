@@ -21,7 +21,6 @@ class Restaurant {
     var reviews: Int
     var location: NSDictionary
 
-
     // ––––– Lab 2 TODO: Complete initializer for Restaurant
     init(dict: [String: Any]) {
         imageURL = URL(string: dict["image_url"] as! String)

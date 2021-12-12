@@ -9,16 +9,8 @@ import UIKit
 import AlamofireImage
 import Parse
 
-
-
 class HostViewController: UIViewController,DisplayViewControllerDelegate {
 
-    
-    
-    
-
-
-    
     // Initialize restaurant variable
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -57,8 +49,6 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
                     // There was a problem, check error.description
                     print("error!")
             }
-        
-          
            
     }
         self.dismiss(animated: true, completion: nil)
@@ -80,7 +70,6 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
 
     }
     
-
 func doSomethingWith(data: Restaurant) {
     var addressFul = data.location["display_address"]! as! NSArray
     let x = addressFul[0] as! String
@@ -90,4 +79,3 @@ func doSomethingWith(data: Restaurant) {
     }
 
 }
-
