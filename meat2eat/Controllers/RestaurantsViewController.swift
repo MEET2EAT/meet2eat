@@ -10,7 +10,6 @@ import UIKit
 import AlamofireImage
 import Lottie
 import SkeletonView
-
 protocol DisplayViewControllerDelegate : NSObjectProtocol{
     func doSomethingWith(data: Restaurant)
 }
@@ -51,7 +50,9 @@ class RestaurantsViewController: UIViewController{
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
         tableView.refreshControl = yelpRefresh
     }
+    
 
+    
     @objc func getAPIData() {
        
         API.getRestaurants() { (restaurants) in
@@ -70,9 +71,11 @@ class RestaurantsViewController: UIViewController{
         }
     }
     
+    
     @IBAction func pickMe(_ sender: Any) {
         
     }
+    
 }
 
 extension RestaurantsViewController: SkeletonTableViewDataSource {
@@ -121,7 +124,7 @@ extension RestaurantsViewController: SkeletonTableViewDataSource {
 
 // ––––– TableView Functionality –––––
 extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredRestaurants.count
     }
@@ -145,8 +148,8 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         
         return cell
     }
-
     //click any restaurant send the data back to host
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRest = restaurantsArray[indexPath.row]
 
@@ -155,7 +158,6 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
             }
         self.dismiss(animated: true, completion: nil)
         }
-
     // ––––– TODO: Send restaurant object to DetailViewController
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let cell = sender as! UITableViewCell
@@ -225,6 +227,8 @@ extension RestaurantsViewController: UISearchBarDelegate {
         
     }
      */
+    
+    
 }
 
 

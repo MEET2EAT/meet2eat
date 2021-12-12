@@ -20,6 +20,8 @@ class RestaurantCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
+    
+    
     // ––––– Lab 2 TODO: Add Movie Variable + didset
     var r: Restaurant! {
            didSet {

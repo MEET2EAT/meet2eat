@@ -8,30 +8,6 @@
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
 ## Weekly User Story Check-off
-### Unit 13
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-<img src='w13.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-Host
-<img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-Table Info
-<img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
-### Unit 12
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-<img src='unit12_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-<img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='unit12_filter.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-<img src='unit12_profile.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
 
 ### Unit 11
 - [x] Updated status of issues in Project board. (2pts)
