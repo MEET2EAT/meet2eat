@@ -12,4 +12,6 @@ class SlotCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var UserImage: UIImageView!
  
     @IBOutlet weak var UserName: UILabel!
+    
+    
 }

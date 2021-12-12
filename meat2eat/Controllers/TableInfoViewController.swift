@@ -7,10 +7,15 @@
 
 import UIKit
 import Parse
+import ParseLiveQuery
+
+
+
+let liveQueryClient = ParseLiveQuery.Client()
 
 class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
     
-    @IBOutlet weak var MeetTimeLabel: UILabel!
+
     @IBOutlet weak var MeetDateLabel: UILabel!
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var RestaurantLocation: UILabel!
@@ -26,13 +31,12 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var TotalSlots: UILabel!
     var totalSlots_ = 12
     var filledSlots = 0;
-    let tableId = "1zBlQfNccR"
+    var tableId = "1zBlQfNccR"
     var table2Meet = [PFObject]()
     var userList = [PFUser]()
-    var host = PFUser();
+    var host = PFUser()
     
     /// <#Description#>
-    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         slotsCollectionView.delegate = self
@@ -40,7 +44,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         //self.loadGuest()
         
         //slotsCollectionView.reloadData()
-      
+        
         // Do any additional setup after loading the view.*/
     }
     
@@ -68,33 +72,43 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlotCell", for: indexPath) as! SlotCollectionViewCell
-         
-         print("Load cell-------")
-         print(indexPath.row)
+         cell.UserName.text = "Empty"
+                  
+         let x = UIImage(named: "KumaProfilePicture")
+        // let xURL = Bundle.main.url(forResource: "KumaProfilePicture", withExtension: "png")
+         cell.UserImage.image = x
 
+         //print("Load cell-------")
+         //print(indexPath.row)
+         
             if(self.filledSlots > indexPath.row){
                 do {
-                    print("DDDDCELLLLLLLLLLLL")
+                    //print("DDDDCELLLLLLLLLLLL")
                    
                     var user_ = PFUser();
                     if(indexPath.row == 0){
                         user_ = self.host
                     }else if(self.userList.isEmpty == false){
-                        print("User________")
+                        //print("User________")
                         user_ = self.userList[indexPath.row-1]
 
                     }
                     print(user_)
                     let query = PFUser.query()
                     query?.whereKey("objectId", contains: user_.objectId)
-                    var userInfo = try query?.findObjects() as! [PFUser]
-                    
+                    let userInfo = try query?.findObjects() as! [PFUser]
+                    if(indexPath.row == 0){
+                        let hostName = (userInfo[0]["username"] as? String)
+                        let hostTable = hostName! + "'s"
+                        self.HostnameLabel.text =  hostTable
+                    }
                     if(userInfo.isEmpty == false){
                        cell.UserName.text = userInfo[0]["username"] as? String
                         let imageFile = userInfo[0]["image"] as!PFFileObject
                         let urlString = imageFile.url!
                         let url = URL(string: urlString)!
                         cell.UserImage.af.setImage(withURL: url)
+                       
                     }
                 } catch {
                     print(error)
@@ -103,28 +117,62 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             return cell
         }
 
+    
+    @IBAction func botButtonOnAction(_ sender: UIButton) {
+        //print("BUTONONONONONO")
+        print(sender.titleLabel?.text ?? "Empty")
+        let buttonTitle = sender.titleLabel?.text ?? "Empty"
+        if(buttonTitle == "Cancel"){
+           // print("Cancellllllllllllll")
+           //cancel the table
+            self.table2Meet[0].deleteInBackground(){ (success, error) in
+                if success {
+                    print("Deleted")
+                }else{
+                    print("something wrong")
+                }
+                self.dismiss(animated: true, completion: nil)
+            }
+        }else{
+            if (buttonTitle == "Leave"){
+               //leave table
+                //print("Leaveeeeeeeeeeee")
+                self.table2Meet[0].remove(PFUser.current() as Any, forKey: "guestsId")
+                self.table2Meet[0].saveInBackground(){(success, error) in
+                    if success {
+                        print("saved")
+                      //  let subscription: Subscription<PFObject> = Client.shared.subscribe(table2Meet[0])
+                        self.viewDidAppear(true)
+                    }else{
+                        print("something wrong")
+                    }
+
+                }
+               
+            }else if (buttonTitle == "Join"){
+                //Join table
+               // print("JOINNNNNNNNNNN")
+                print(PFUser.current() as! PFUser)
+                self.table2Meet[0].add(PFUser.current() as! PFUser, forKey: "guestsId")
+                self.table2Meet[0].saveInBackground(){(success, error) in
+                    if success {
+                        print("saved")
+                        self.viewDidAppear(true)
+                    }else{
+                        print("something wrong")
+                    }
+
+                }
+                //loadTable2Eat()
+                
+            }
+        }
+        
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;
     }
     
-    func userInTableLoad(){
-        let user = PFUser.current()
-        //check if user is the host
-        if( user?.objectId! == self.host.objectId!){
-            self.JoinButton.isEnabled = false;
-        }else{
-            self.JoinButton.isEnabled = true;
-            let userString = user?.objectId as! String
-            let guestListId = self.table2Meet[0]["guestsId"] as! [String]
-            if guestListId.contains(userString){
-                self.JoinButton.setTitle("Leave", for: .normal)
-                
-            }else{
-                self.JoinButton.setTitle("Join", for: .normal)
-                
-            }
-        }
-    }
     @IBAction func backOnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -134,29 +182,67 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         query.includeKey("users")
         query.whereKey("objectId", contains: tableId)
         query.limit = 1
-     
+        
         query.findObjectsInBackground{(Table, error) in
                 
             self.table2Meet = Table!
             let table = self.table2Meet[0]
-            print("ttabkbk")
-            print(table)
+            //print("ttabkbk")
+            // print(table)
             self.host  = table["host"] as! PFUser
             if(table["guestsId"] != nil){
                 self.userList = table["guestsId"] as! [PFUser]
             }
             self.filledSlots = self.userList.count + 1
             self.totalSlots_ = (table["slots"] as! Int) + 1
+    
             
-            self.HostnameLabel.text = "\(PFUser.current()?.username)'s"
-            self.TotalSlots.text = "\(self.totalSlots_)"
+     
+            self.TotalSlots.text = "\(self.totalSlots_ - 1)"
             self.FilledSlots.text = "\(self.filledSlots)"
             self.RestaurantName.text = "\(table["ResName"] as! String)"
             self.RestaurantLocation.text = "\(table["location"] as! String)"
-            self.MeetTimeLabel.text = "\(table["detailMeet"] as! String)"
-            
+     
+            let meetDate = table["dateMeet"] as! Date
+            let dateFort = DateFormatter()
+            dateFort.dateFormat = "EEEE MM/dd/yyyy HH:mm"
+            let myDate = dateFort.string(from: meetDate)
+            self.MeetDateLabel.text = myDate
             self.slotsCollectionView.reloadData()
+            //self.loadButton()
+            
+            let user = PFUser.current()
+            //check if user is the host
+            if(user?.objectId! == self.host.objectId!){
+                self.JoinButton.setTitle("Cancel", for: .normal)
+            }else{
+                self.JoinButton.isEnabled = true;
+                let userString = user?.objectId as! String
+                if(self.table2Meet[0]["guestsId"]  != nil){
+                    //print("GUEST LIST IS NOT EMPTY")
+                    let guestList = self.table2Meet[0]["guestsId"] as! [PFUser]
+                    var isAguest = false;
+                    for guest in guestList {
+                        if guest.objectId == userString{
+                            self.JoinButton.setTitle("Leave", for: .normal)
+                            isAguest = true;
+                            break;
+                        }
+                    }
+                    if isAguest == false {
+                        self.JoinButton.setTitle("Join", for: .normal)
+                    }
+                  
+                }
+                else{
+                   // print("GUEST LIST IS EMPTY")
+                    self.JoinButton.setTitle("Join", for: .normal)
+                }
             }
+        }
+        
+        
+        
     }
        
 }
