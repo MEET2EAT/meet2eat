@@ -10,10 +10,11 @@ import Parse
 
 class TableInfoViewController: UIViewController {
 
+    var tableId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+
     }
     
 

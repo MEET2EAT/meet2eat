@@ -121,8 +121,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyu-NC-zNa">
-                                                    <rect key="frame" x="128" y="44" width="266" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restaurant Location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyu-NC-zNa">
+                                                    <rect key="frame" x="128" y="44" width="266" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,7 +153,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ZXV-Mu-6ZF" firstAttribute="top" secondItem="Hyu-NC-zNa" secondAttribute="bottom" constant="32" id="0t0-Yb-Yrd"/>
                                                 <constraint firstItem="xy5-Gb-zoK" firstAttribute="leading" secondItem="ZnG-3a-trA" secondAttribute="trailing" constant="8" id="27U-Qy-xOe"/>
                                                 <constraint firstAttribute="bottom" secondItem="5HH-uD-jbk" secondAttribute="bottom" constant="17" id="31K-Qr-RNe"/>
                                                 <constraint firstItem="5HH-uD-jbk" firstAttribute="leading" secondItem="ZnG-3a-trA" secondAttribute="trailing" constant="8" id="GPm-7M-7gI"/>
@@ -162,13 +161,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="lxp-G3-mBE" secondAttribute="bottom" constant="17" id="SA0-Kh-FWH"/>
                                                 <constraint firstItem="Hyu-NC-zNa" firstAttribute="leading" secondItem="ZnG-3a-trA" secondAttribute="trailing" constant="8" id="VNc-fp-h7f"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hyu-NC-zNa" secondAttribute="trailing" constant="20" id="WbF-hF-pIw"/>
-                                                <constraint firstItem="lxp-G3-mBE" firstAttribute="top" secondItem="Hyu-NC-zNa" secondAttribute="bottom" constant="32" id="YCX-pR-OhU"/>
                                                 <constraint firstItem="xy5-Gb-zoK" firstAttribute="top" secondItem="WAa-4o-dWV" secondAttribute="top" constant="15" id="ct5-2F-nxd"/>
                                                 <constraint firstItem="ZnG-3a-trA" firstAttribute="leading" secondItem="WAa-4o-dWV" secondAttribute="leading" constant="20" id="hu3-Mm-19L"/>
-                                                <constraint firstItem="5HH-uD-jbk" firstAttribute="top" secondItem="Hyu-NC-zNa" secondAttribute="bottom" constant="32" id="iUd-ZH-A8u"/>
                                                 <constraint firstItem="ZnG-3a-trA" firstAttribute="top" secondItem="WAa-4o-dWV" secondAttribute="top" constant="15" id="imU-fO-njX"/>
                                                 <constraint firstItem="Hyu-NC-zNa" firstAttribute="top" secondItem="xy5-Gb-zoK" secondAttribute="bottom" constant="8" id="k1Q-Xs-VGz"/>
-                                                <constraint firstItem="5Ww-c3-rZq" firstAttribute="top" secondItem="Hyu-NC-zNa" secondAttribute="bottom" constant="32" id="prH-zS-WLB"/>
                                                 <constraint firstAttribute="trailing" secondItem="xy5-Gb-zoK" secondAttribute="trailing" constant="20" id="qEr-TN-A84"/>
                                                 <constraint firstItem="5Ww-c3-rZq" firstAttribute="leading" secondItem="lxp-G3-mBE" secondAttribute="trailing" constant="14" id="t9L-r7-DN1"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZXV-Mu-6ZF" secondAttribute="bottom" constant="17" id="vIe-UZ-mB8"/>
@@ -182,7 +178,6 @@
                                             <outlet property="restaurantLocLabel" destination="Hyu-NC-zNa" id="bLY-dz-N3F"/>
                                             <outlet property="restaurantNameLabel" destination="xy5-Gb-zoK" id="svy-e6-ETe"/>
                                             <outlet property="tableImg" destination="ZnG-3a-trA" id="3fO-P8-6uS"/>
-                                            <segue destination="eoq-KE-RPA" kind="presentation" id="fy7-Ge-dhM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,7 +191,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="SX3-U7-guJ">
                             <connections>
-                                <segue destination="pZa-qr-6up" kind="presentation" id="L1E-Kb-KlF"/>
+                                <segue destination="pZa-qr-6up" kind="presentation" identifier="filterSegue" id="L1E-Kb-KlF"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="kdg-4h-wNw">
@@ -206,7 +201,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Host"/>
                                 <connections>
-                                    <segue destination="PMO-9G-Xd6" kind="presentation" modalPresentationStyle="fullScreen" id="aFw-8d-RnF"/>
+                                    <segue destination="PMO-9G-Xd6" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="aFw-8d-RnF"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -214,6 +209,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2eg-eA-rH6" id="vcO-6N-Ea2"/>
+                        <segue destination="eoq-KE-RPA" kind="presentation" identifier="tableInfoSegue" id="oYC-bE-MQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sl3-vc-P8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

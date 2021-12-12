@@ -9,21 +9,21 @@ import UIKit
 import Parse
 import AlamofireImage
 
-
-
 class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, filterDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var tables = [PFObject]()
-    var capacityFilter = 10
+    var capacityFilter = 20
     var numberOfLoad: Int!
     let lobbyRefreshControl = UIRefreshControl()
+    var tableId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        FilterViewController.instance.setListener(listener: self)
         
         lobbyRefreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         tableView.refreshControl = lobbyRefreshControl
@@ -32,9 +32,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let query = PFQuery(className: "Tables")
+        let query = PFQuery(className: "Table2Meet")
         query.includeKey("host")
-        query.whereKey("max", lessThanOrEqualTo: capacityFilter)
+        query.whereKey("slots", lessThanOrEqualTo: capacityFilter)
         numberOfLoad = 20
         query.limit = numberOfLoad
         
@@ -55,22 +55,29 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
         
         let table = tables[indexPath.row]
-        // unit 5 video parstagram 6
-        cell.restaurantNameLabel.text = table["restaurantName"] as? String
-        cell.restaurantLocLabel.text = table["restaurantLoc"] as? String
-        cell.currentLabel.text = "\(table["current"]!)"
-        cell.maxLabel.text = "\(table["max"]!)"
+        let guestCount = (table["guestsId"] as AnyObject).count ?? 0
+        let tableHost = table["host"] as! PFUser
+        let imageFile = tableHost["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        cell.restaurantNameLabel.text = table["ResName"] as? String
+        cell.restaurantLocLabel.text = table["location"] as? String
+        cell.currentLabel.text = "\(guestCount + 1)"
+        cell.maxLabel.text = "\(table["slots"]!)"
+        cell.tableImg.af_setImage(withURL: url)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTable = tables[indexPath.row]
-        print("\(selectedTable["current"]!)")
+        tableId = selectedTable.objectId
+        performSegue(withIdentifier: "tableInfoSegue", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == tables.count {
+        if indexPath.row + 1 == tables.count && tables.count >= 20 {
             loadMore()
         }
     }
@@ -92,10 +99,10 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func loadMore() {
-        numberOfLoad = numberOfLoad + 5
-        let query = PFQuery(className: "Tables")
+        numberOfLoad = numberOfLoad + 10
+        let query = PFQuery(className: "Table2Meet")
         query.includeKey("host")
-        query.whereKey("max", lessThanOrEqualTo: capacityFilter)
+        query.whereKey("slots", lessThanOrEqualTo: capacityFilter)
         query.limit = numberOfLoad
         
         query.findObjectsInBackground{ (tables, error) in
@@ -108,11 +115,23 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func filterDismissed() {
+        run(after: 0.3) {
+            self.viewDidAppear(true)
+            self.lobbyRefreshControl.endRefreshing()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let filterVc: FilterViewController = segue.destination as! FilterViewController
-        filterVc.filterDataDelegate = self
-        filterVc.maxFilter = capacityFilter
+        if segue.identifier == "filterSegue" {
+            let filterVc: FilterViewController = segue.destination as! FilterViewController
+            filterVc.filterDataDelegate = self
+            filterVc.maxFilter = capacityFilter
+        } else if segue.identifier == "tableInfoSegue" {
+            let infoVc = segue.destination as! TableInfoViewController
+            infoVc.tableId = self.tableId
+        }
     }
 }
