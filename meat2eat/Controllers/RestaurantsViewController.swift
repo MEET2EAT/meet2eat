@@ -5,7 +5,6 @@
 //  Created by Memo on 5/21/20.
 //  Copyright © 2020 memo. All rights reserved.
 //
-
 import UIKit
 import AlamofireImage
 import Lottie
@@ -158,7 +157,7 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
             }
         self.dismiss(animated: true, completion: nil)
         }
-    // ––––– TODO: Send restaurant object to DetailViewController
+    // ––––– TODO: Send restaurant object to DetailViewController
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let cell = sender as! UITableViewCell
 //        if let indexPath = tableView.indexPath(for: cell) {
@@ -171,8 +170,7 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
     
 }
 
-
-// ––––– UI SearchBar Functionality –––––
+// ––––– UI SearchBar Functionality –––––
 extension RestaurantsViewController: UISearchBarDelegate {
     
     // Search bar functionality
@@ -205,7 +203,6 @@ extension RestaurantsViewController: UISearchBarDelegate {
     
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -221,17 +218,10 @@ extension RestaurantsViewController: UISearchBarDelegate {
                 let r = filteredRestaurants[indexPath.row]
                 let detailViewController = segue.destination as! HostViewController
                 detailViewController.r = r
-
             }
             }
         
     }
      */
     
-    
 }
-
-
-
-
-

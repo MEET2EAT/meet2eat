@@ -4,7 +4,6 @@
 //
 //  Created by Luu, Loc on 11/27/21.
 //
-
 import UIKit
 import AlamofireImage
 import Parse
@@ -13,12 +12,6 @@ import Parse
 
 class HostViewController: UIViewController,DisplayViewControllerDelegate {
 
-    
-    
-    
-
-
-    
     // Initialize restaurant variable
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -31,12 +24,9 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
         super.viewDidLoad()
         //RestaurantsViewController .dismiss(animated:YES completion:nil)
       //  RestaurantsViewController.dismiss(animated: true, completion: nil)
-
         // Do any additional setup after loading the view.
     }
 
-
-    
     @IBAction func OnSetTableButton(_ sender: Any) {
 
        let Table2Meet = PFObject(className: "Table2Meet")
@@ -70,7 +60,6 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
     }
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -90,4 +79,3 @@ func doSomethingWith(data: Restaurant) {
     }
 
 }
-
