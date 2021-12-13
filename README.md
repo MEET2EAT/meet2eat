@@ -20,11 +20,11 @@ Host
 <img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 Table Info
 <img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
 Pull to refresh feature
-<img src='https://i.imgur.com/YCFiGMc.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit13_refresh.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
 Infinite scrolling feature
-<img src='https://i.imgur.com/x8JSZhU.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit13_infiniteScroll.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+
 
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
