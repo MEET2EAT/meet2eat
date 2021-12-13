@@ -22,12 +22,9 @@ Table Info
 <img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 Pull to refresh feature
-
-![](https://i.imgur.com/YCFiGMc.gif)
-
+<img src='https://i.imgur.com/YCFiGMc.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 Infinite scrolling feature
-
-![](https://i.imgur.com/x8JSZhU.gif)
+<img src='https://i.imgur.com/x8JSZhU.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
