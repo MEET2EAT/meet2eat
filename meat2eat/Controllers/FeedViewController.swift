@@ -17,6 +17,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var showsCommentBar = false
     var selectedPost: PFObject!
     var posts = [PFObject]()
+    let myRefreshControl = UIRefreshControl()
+    var numberOfPosts: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Added for pull to refresh
+        myRefreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
+        
         // Do any additional setup after loading the view.
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl){
+        viewDidAppear(true)
+        self.myRefreshControl.endRefreshing()
     }
     
     @objc func keyboardWillBeHidden(note: Notification) {
@@ -50,10 +61,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+    
+        numberOfPosts = 20
         let query = PFQuery(className: "Posts")
         query.includeKeys(["author", "comments", "comments.author"])
-        query.limit = 20
+        query.limit = numberOfPosts
         query.order(byDescending: "createdAt")
         
         query.findObjectsInBackground{ (posts, error) in
@@ -64,6 +76,30 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    
+    func loadMorePosts(){
+        super.viewDidAppear(true)
+        numberOfPosts = numberOfPosts + 20
+        let query = PFQuery(className: "Posts")
+        query.includeKeys(["author", "comments", "comments.author"])
+        query.limit = numberOfPosts
+        query.order(byDescending: "createdAt")
+        
+        query.findObjectsInBackground{ (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section + 1 == numberOfPosts {
+            loadMorePosts()
+        }
+    }
+    
+    
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         //Create the comment
         let comment = PFObject(className: "Comments")
