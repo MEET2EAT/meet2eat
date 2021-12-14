@@ -19,7 +19,7 @@ class Restaurant {
     var phone: String
     var rating: Double
     var reviews: Int
-
+    var location: NSDictionary
 
 
     // ––––– Lab 2 TODO: Complete initializer for Restaurant
@@ -29,6 +29,7 @@ class Restaurant {
         rating = dict["rating"] as! Double
         reviews = dict["review_count"] as! Int
         phone = dict["display_phone"] as! String
+        location = dict["location"] as! NSDictionary
         url = URL(string: dict["url"] as! String)
         mainCategory = Restaurant.getMainCategory(dict: dict)
         
