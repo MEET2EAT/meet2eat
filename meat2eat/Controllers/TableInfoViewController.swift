@@ -10,7 +10,6 @@ import Parse
 import ParseLiveQuery
 
 
-
 let liveQueryClient = ParseLiveQuery.Client()
 
 class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
@@ -44,8 +43,6 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         //self.loadGuest()
         
         //slotsCollectionView.reloadData()
-        
-        // Do any additional setup after loading the view.*/
     }
     
     

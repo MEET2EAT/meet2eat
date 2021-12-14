@@ -35,6 +35,8 @@
 		ADE9912E2739DFDE0098884A /* meat2eatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9912D2739DFDE0098884A /* meat2eatUITests.swift */; };
 		ADE991302739DFDE0098884A /* meat2eatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9912F2739DFDE0098884A /* meat2eatUITestsLaunchTests.swift */; };
 		B60DB6470720EDC851DE6449 /* Pods_meat2eat_meat2eatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */; };
+		F102537D27543CEC00156785 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102537C27543CEC00156785 /* FilterViewController.swift */; };
+		F14D14B52754598300C41EAB /* TableInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14D14B42754598300C41EAB /* TableInfoViewController.swift */; };
 		F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8A3A92744B36600229615 /* TableCell.swift */; };
 		F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB7E65274076BD0014006F /* LobbyViewController.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		ADE9912F2739DFDE0098884A /* meat2eatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meat2eatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eat_meat2eatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7D3A2D9DE00C9F030A8BD3 /* Pods-meat2eatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.debug.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F102537C27543CEC00156785 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		F14D14B42754598300C41EAB /* TableInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInfoViewController.swift; sourceTree = "<group>"; };
 		F1C8A3A92744B36600229615 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		F1EB7E65274076BD0014006F /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +231,7 @@
 		F1EB7E62274076000014006F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				//F14D14B42754598300C41EAB /* TableInfoViewController.swift */,
 				58552A822759D35C00243530 /* TableInfoViewController.swift */,
 				9122E495274B01F1001D6079 /* LoginViewController.swift */,
 				9122E497274B0231001D6079 /* FeedViewController.swift */,
@@ -236,6 +241,7 @@
 				55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */,
 				AD741FA127449FC40032822D /* PostViewController.swift */,
 				AD9F13622752C59D001F0B05 /* HostViewController.swift */,
+				F102537C27543CEC00156785 /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -518,11 +524,13 @@
 				91B503C5275336280026B43C /* CommentCell.swift in Sources */,
 				AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
 				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
+				F14D14B52754598300C41EAB /* TableInfoViewController.swift in Sources */,
 				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
 				9122E498274B0231001D6079 /* FeedViewController.swift in Sources */,
 				ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */,
 				55B83FC6274A581D00F35C98 /* ProfileSettingViewController.swift in Sources */,
 				55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */,
+				F102537D27543CEC00156785 /* FilterViewController.swift in Sources */,
 				F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */,
 				587910DE27596B3800041577 /* SlotCollectionViewCell.swift in Sources */,
 				AD9F13632752C59D001F0B05 /* HostViewController.swift in Sources */,
