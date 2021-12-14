@@ -13,25 +13,37 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var usernameDisplay: UILabel!
+    @IBOutlet weak var passwordDisplay: UILabel!
+    @IBOutlet weak var emailDisplay: UILabel!
+   
     
     override func viewDidLoad() {
-        
-
-        
         makeRounded()
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
     
-    func makeRounded() {
+    override func viewWillAppear(_ animated: Bool) {
+        usernameDisplay.text = PFUser.current()!.username
+        passwordDisplay.text = "*****"
+        emailDisplay.text = PFUser.current()!.email
+        //phoneNumDisplay.text = PFUser.current()!.phone
+        
+        let user = PFUser.current()!
+        let imageFile = user["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
 
+        profilePic.af_setImage(withURL: url)
+    }
+    
+    
+    func makeRounded() {
         profilePic.layer.borderWidth = 1
         profilePic.layer.masksToBounds = false
         profilePic.layer.borderColor = UIColor.black.cgColor
-        profilePic.layer.cornerRadius =
-        profilePic.frame.height / 2
+        profilePic.layer.cornerRadius = profilePic.frame.height / 2
         profilePic.clipsToBounds = true
-     
         }
 
   

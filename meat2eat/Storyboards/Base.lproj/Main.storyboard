@@ -1289,10 +1289,10 @@
                                 <buttonConfiguration key="configuration" style="plain" image="edit_img" title="">
                                     <color key="baseForegroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="kQU-Aa-eGq" kind="presentation" modalPresentationStyle="fullScreen" id="c9i-xH-xGc"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="kQU-Aa-eGq" kind="presentation" modalPresentationStyle="fullScreen" id="Xa5-ac-MrN"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
