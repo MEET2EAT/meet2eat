@@ -23,7 +23,9 @@
 		9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E495274B01F1001D6079 /* LoginViewController.swift */; };
 		9122E498274B0231001D6079 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E497274B0231001D6079 /* FeedViewController.swift */; };
 		9122E49A274B210F001D6079 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122E499274B210F001D6079 /* PostCell.swift */; };
+		91B503C5275336280026B43C /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B503C4275336280026B43C /* CommentCell.swift */; };
 		AD741FA227449FC40032822D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741FA127449FC40032822D /* PostViewController.swift */; };
+		AD9F13632752C59D001F0B05 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9F13622752C59D001F0B05 /* HostViewController.swift */; };
 		ADE9910D2739DFD60098884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910C2739DFD60098884A /* AppDelegate.swift */; };
 		ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9910E2739DFD60098884A /* SceneDelegate.swift */; };
 		ADE991142739DFD60098884A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADE991122739DFD60098884A /* Main.storyboard */; };
@@ -75,8 +77,10 @@
 		9122E495274B01F1001D6079 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9122E497274B0231001D6079 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9122E499274B210F001D6079 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		91B503C4275336280026B43C /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		92BFE284ACB68276F39BB03C /* Pods-meat2eatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.release.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD741FA127449FC40032822D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		AD9F13622752C59D001F0B05 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		ADE991092739DFD60098884A /* meat2eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meat2eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE9910C2739DFD60098884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADE9910E2739DFD60098884A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,13 +148,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		582B4B1E274AB67900EF4CA8 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		87ED0C81214F6EF22E53A45A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +183,6 @@
 		ADE9910B2739DFD60098884A /* meat2eat */ = {
 			isa = PBXGroup;
 			children = (
-				582B4B1E274AB67900EF4CA8 /* New Group */,
 				582B4B1B274AB66A00EF4CA8 /* Model */,
 				F1EB7E67274076F10014006F /* Extra */,
 				F1EB7E642740764D0014006F /* Cells */,
@@ -197,9 +193,7 @@
 				ADE9910E2739DFD60098884A /* SceneDelegate.swift */,
 				ADE991152739DFDE0098884A /* Assets.xcassets */,
 				ADE9911A2739DFDE0098884A /* Info.plist */,
-				9122E495274B01F1001D6079 /* LoginViewController.swift */,
-				9122E497274B0231001D6079 /* FeedViewController.swift */,
-				9122E499274B210F001D6079 /* PostCell.swift */,
+				91B503C4275336280026B43C /* CommentCell.swift */,
 			);
 			path = meat2eat;
 			sourceTree = "<group>";
@@ -234,11 +228,14 @@
 			isa = PBXGroup;
 			children = (
 				58552A822759D35C00243530 /* TableInfoViewController.swift */,
+				9122E495274B01F1001D6079 /* LoginViewController.swift */,
+				9122E497274B0231001D6079 /* FeedViewController.swift */,
 				F1EB7E65274076BD0014006F /* LobbyViewController.swift */,
 				582B4B35274ABC8700EF4CA8 /* RestaurantsViewController.swift */,
 				55B83FC32749F27100F35C98 /* ProfileViewController.swift */,
 				55B83FC5274A581D00F35C98 /* ProfileSettingViewController.swift */,
 				AD741FA127449FC40032822D /* PostViewController.swift */,
+				AD9F13622752C59D001F0B05 /* HostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				587910DD27596B3800041577 /* SlotCollectionViewCell.swift */,
+				9122E499274B210F001D6079 /* PostCell.swift */,
 				582B4B39274ABD1C00EF4CA8 /* RestaurantCell.swift */,
 				F1C8A3A92744B36600229615 /* TableCell.swift */,
 			);
@@ -516,8 +514,9 @@
 				582B4B38274ABCD300EF4CA8 /* Restaurant.swift in Sources */,
 				582B4B40274ABD8200EF4CA8 /* FileSubviewsSkeletonables.swift in Sources */,
 				582B4B36274ABC8700EF4CA8 /* RestaurantsViewController.swift in Sources */,
-				AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
 				58552A832759D35D00243530 /* TableInfoViewController.swift in Sources */,
+				91B503C5275336280026B43C /* CommentCell.swift in Sources */,
+				AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
 				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
 				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,
 				9122E498274B0231001D6079 /* FeedViewController.swift in Sources */,
@@ -526,6 +525,7 @@
 				55B83FC42749F27100F35C98 /* ProfileViewController.swift in Sources */,
 				F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */,
 				587910DE27596B3800041577 /* SlotCollectionViewCell.swift in Sources */,
+				AD9F13632752C59D001F0B05 /* HostViewController.swift in Sources */,
 				ADE9910F2739DFD60098884A /* SceneDelegate.swift in Sources */,
 				582B4B3C274ABD4400EF4CA8 /* API.swift in Sources */,
 				9122E49A274B210F001D6079 /* PostCell.swift in Sources */,
