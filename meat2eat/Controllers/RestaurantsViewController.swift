@@ -20,7 +20,8 @@ class RestaurantsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var restaurantsArray: [Restaurant] = []
     
-
+    @IBOutlet weak var searchButton: UIButton!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredRestaurants: [Restaurant] = []
     
@@ -29,37 +30,49 @@ class RestaurantsViewController: UIViewController{
     var refresh = true
     
     let yelpRefresh = UIRefreshControl()
-    
+    let restCount = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(restaurantsArray)
+        
         startAnimations()
         // Table View
-        tableView.visibleCells.forEach { $0.showSkeleton() }
+        //tableView.visibleCells.forEach { $0.showSkeleton() }
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         // Search Bar delegate
         searchBar.delegate = self
-    
-    
+       
         // Get Data from API
         getAPIData()
         
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
+    
         tableView.refreshControl = yelpRefresh
     }
     
 
     
     @objc func getAPIData() {
-       
-        API.getRestaurants() { (restaurants) in
+        loadRestaurants()
+        self.searchButton.isHidden = false
+        tableView.refreshControl = yelpRefresh
+    }
+    
+    @IBAction func searchButtonOnAction(_ sender: Any) {
+        loadRestaurants()
+        self.viewDidLoad()
+    }
+    func loadRestaurants(){
+        print("reload")
+        var locationRestaurant = searchBar.text
+        if(locationRestaurant == "") {locationRestaurant = "79424"}
+        API.getRestaurants(locationRest: locationRestaurant ?? "79424") { (restaurants) in
             guard let restaurants = restaurants else {
                 return
             }
-            
+    
             self.restaurantsArray = restaurants
             self.filteredRestaurants = restaurants
             self.tableView.reloadData()
@@ -70,12 +83,6 @@ class RestaurantsViewController: UIViewController{
             
         }
     }
-    
-    
-    @IBAction func pickMe(_ sender: Any) {
-        
-    }
-    
 }
 
 extension RestaurantsViewController: SkeletonTableViewDataSource {
@@ -98,7 +105,7 @@ extension RestaurantsViewController: SkeletonTableViewDataSource {
         animationView!.loopMode = .loop
 
         // Animation speed - Larger number = faste
-        animationView!.animationSpeed = 5
+        animationView!.animationSpeed = 10
 
         //  Play animation
         animationView!.play()
@@ -140,7 +147,7 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.showSkeleton()
         
         // Stop animation after like .5 seconds
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
             cell.stopSkeletonAnimation()
             cell.hideSkeleton()
         }

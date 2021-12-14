@@ -6,6 +6,7 @@ target 'meat2eat' do
   use_frameworks!
 
   # Pods for meat2eat
+	pod 'ParseLiveQuery'
 	pod "Parse"
 	pod "AlamofireImage"
 	pod "MessageInputBar"
