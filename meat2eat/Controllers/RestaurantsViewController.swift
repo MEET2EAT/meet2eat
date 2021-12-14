@@ -10,17 +10,18 @@ import UIKit
 import AlamofireImage
 import Lottie
 import SkeletonView
+import MapKit
+import CoreLocation
+
 protocol DisplayViewControllerDelegate : NSObjectProtocol{
     func doSomethingWith(data: Restaurant)
 }
-class RestaurantsViewController: UIViewController{
+class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
     weak var delegate : DisplayViewControllerDelegate?
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     var restaurantsArray: [Restaurant] = []
-    
-    @IBOutlet weak var searchButton: UIButton!
     
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredRestaurants: [Restaurant] = []
@@ -31,9 +32,20 @@ class RestaurantsViewController: UIViewController{
     
     let yelpRefresh = UIRefreshControl()
     let restCount = 20
-
+    let locationManager = CLLocationManager()
+    var long: Double = -122.431297
+    var lat: Double = 37.773972
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         startAnimations()
         // Table View
@@ -45,6 +57,7 @@ class RestaurantsViewController: UIViewController{
         searchBar.delegate = self
        
         // Get Data from API
+        print("GEt API")
         getAPIData()
         
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
@@ -52,23 +65,30 @@ class RestaurantsViewController: UIViewController{
         tableView.refreshControl = yelpRefresh
     }
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+       // print("===locations = \(locValue.latitude) \(locValue.longitude)")
+        lat = Double(locValue.latitude)
+        long = Double(locValue.longitude)
+    }
     
     @objc func getAPIData() {
         loadRestaurants()
-        self.searchButton.isHidden = false
         tableView.refreshControl = yelpRefresh
     }
     
     @IBAction func searchButtonOnAction(_ sender: Any) {
         loadRestaurants()
+        searchBar.text = ""
         self.viewDidLoad()
     }
     func loadRestaurants(){
-        print("reload")
-        var locationRestaurant = searchBar.text
-        if(locationRestaurant == "") {locationRestaurant = "79424"}
-        API.getRestaurants(locationRest: locationRestaurant ?? "79424") { (restaurants) in
+       // print("reload")
+        
+        
+       // var locationRestaurant = locationSearchBar.text
+        //if(locationRestaurant == "") {locationRestaurant = "79424"}
+        API.getRestaurants(lat: self.lat, long: self.long) { (restaurants) in
             guard let restaurants = restaurants else {
                 return
             }
