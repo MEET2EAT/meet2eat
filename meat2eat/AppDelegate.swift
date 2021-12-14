@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import ParseLiveQuery
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //AN-connect database
+
+
         let parseConfig = ParseClientConfiguration {
                 $0.applicationId = "UGuX0BqDZlIpo6ZtHoPJteasijaXw9FNN8qVExn1" // <- UPDATE
                 $0.clientKey = "gBQQID8RMwkWUgTe2FsuGGVpziM8LM3Q61UGVko1" // <- UPDATE

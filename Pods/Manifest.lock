@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.4)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
+  - Bolts-Swift (1.5.0)
   - Bolts/Tasks (1.9.1)
   - lottie-ios (3.2.3)
   - MessageInputBar (0.4.1):
@@ -11,13 +12,19 @@ PODS:
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
+  - ParseLiveQuery (2.8.1):
+    - Bolts-Swift (~> 1.5.0)
+    - Parse (~> 1.19.0)
+    - Starscream (~> 4.0.4)
   - SkeletonView (1.25.2)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - AlamofireImage
   - lottie-ios
   - MessageInputBar
   - Parse
+  - ParseLiveQuery
   - SkeletonView
 
 SPEC REPOS:
@@ -25,20 +32,26 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - Bolts-Swift
     - lottie-ios
     - MessageInputBar
     - Parse
+    - ParseLiveQuery
     - SkeletonView
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  Bolts-Swift: afbbaf8c8186e7f769be4afa656949c14087ba44
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  ParseLiveQuery: 7bc437c3b986880ffe5f241a9921e37f45df0677
   SkeletonView: 820b2bbd180d7408f3f03b6462cfc3cac39d2ef2
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 7c5aaa5ce2cf4b5f0db05fb42c9a89bc1a0696f1
+PODFILE CHECKSUM: 09832a5435321dbff4c08c9fad9f4bcf2587eaec
 
 COCOAPODS: 1.11.0

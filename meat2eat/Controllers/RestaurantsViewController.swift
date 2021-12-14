@@ -10,15 +10,18 @@ import UIKit
 import AlamofireImage
 import Lottie
 import SkeletonView
-
-class RestaurantsViewController: UIViewController {
-        
-    // Outlets
+protocol DisplayViewControllerDelegate : NSObjectProtocol{
+    func doSomethingWith(data: Restaurant)
+}
+class RestaurantsViewController: UIViewController{
+    weak var delegate : DisplayViewControllerDelegate?
     
+    // Outlets
     @IBOutlet weak var tableView: UITableView!
     var restaurantsArray: [Restaurant] = []
     
-
+    @IBOutlet weak var searchButton: UIButton!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     var filteredRestaurants: [Restaurant] = []
     
@@ -27,36 +30,49 @@ class RestaurantsViewController: UIViewController {
     var refresh = true
     
     let yelpRefresh = UIRefreshControl()
-    
+    let restCount = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(restaurantsArray)
+        
         startAnimations()
         // Table View
-        tableView.visibleCells.forEach { $0.showSkeleton() }
+        //tableView.visibleCells.forEach { $0.showSkeleton() }
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         // Search Bar delegate
         searchBar.delegate = self
-    
-    
+       
         // Get Data from API
         getAPIData()
         
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
+    
         tableView.refreshControl = yelpRefresh
     }
     
+
     
     @objc func getAPIData() {
-       
-        API.getRestaurants() { (restaurants) in
+        loadRestaurants()
+        self.searchButton.isHidden = false
+        tableView.refreshControl = yelpRefresh
+    }
+    
+    @IBAction func searchButtonOnAction(_ sender: Any) {
+        loadRestaurants()
+        self.viewDidLoad()
+    }
+    func loadRestaurants(){
+        print("reload")
+        var locationRestaurant = searchBar.text
+        if(locationRestaurant == "") {locationRestaurant = "79424"}
+        API.getRestaurants(locationRest: locationRestaurant ?? "79424") { (restaurants) in
             guard let restaurants = restaurants else {
                 return
             }
-            
+    
             self.restaurantsArray = restaurants
             self.filteredRestaurants = restaurants
             self.tableView.reloadData()
@@ -67,9 +83,6 @@ class RestaurantsViewController: UIViewController {
             
         }
     }
-    
-    
-
 }
 
 extension RestaurantsViewController: SkeletonTableViewDataSource {
@@ -92,7 +105,7 @@ extension RestaurantsViewController: SkeletonTableViewDataSource {
         animationView!.loopMode = .loop
 
         // Animation speed - Larger number = faste
-        animationView!.animationSpeed = 5
+        animationView!.animationSpeed = 10
 
         //  Play animation
         animationView!.play()
@@ -119,8 +132,6 @@ extension RestaurantsViewController: SkeletonTableViewDataSource {
 // ––––– TableView Functionality –––––
 extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredRestaurants.count
     }
@@ -131,12 +142,12 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell") as! RestaurantCell
         // Set cell's restaurant
         cell.r = filteredRestaurants[indexPath.row]
-        
+
         // Initialize skeleton view every time cell gets initialized
         cell.showSkeleton()
         
         // Stop animation after like .5 seconds
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
             cell.stopSkeletonAnimation()
             cell.hideSkeleton()
         }
@@ -144,8 +155,16 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         
         return cell
     }
+    //click any restaurant send the data back to host
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRest = restaurantsArray[indexPath.row]
+
+        if let delegate = delegate{
+            delegate.doSomethingWith(data: selectedRest)
+            }
+        self.dismiss(animated: true, completion: nil)
+        }
     // ––––– TODO: Send restaurant object to DetailViewController
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let cell = sender as! UITableViewCell
@@ -195,22 +214,26 @@ extension RestaurantsViewController: UISearchBarDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       // self.dismiss(animated: true, completion: nil)
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let cell = sender as! UITableViewCell
-        if let indexPath = tableView.indexPath(for: cell) {
-            let r = filteredRestaurants[indexPath.row]
-            let detailViewController = segue.destination as! HostViewController
-            detailViewController.r = r
-        }
-        self.dismiss(animated: true, completion: nil)
+        
+        
+        print("data to:")
+        if(segue.identifier == "RestaurantsViewController"){
+            let cell = sender as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: cell) {
+                let r = filteredRestaurants[indexPath.row]
+                let detailViewController = segue.destination as! HostViewController
+                detailViewController.r = r
+
+            }
+            }
+        
     }
+     */
     
     
 }
-
-
-
-
-
