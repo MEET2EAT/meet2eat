@@ -31,10 +31,11 @@ class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
     var refresh = true
     
     let yelpRefresh = UIRefreshControl()
-    let restCount = 20
+    var restCount = 0
     let locationManager = CLLocationManager()
     var long: Double = -122.431297
     var lat: Double = 37.773972
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
             locationManager.startUpdatingLocation()
         }
         
-        startAnimations()
+        //startAnimations()
         // Table View
         //tableView.visibleCells.forEach { $0.showSkeleton() }
         tableView.delegate = self
@@ -61,7 +62,6 @@ class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
         getAPIData()
         
         yelpRefresh.addTarget(self, action: #selector(getAPIData), for: .valueChanged)
-    
         tableView.refreshControl = yelpRefresh
     }
     
@@ -97,57 +97,31 @@ class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
             self.filteredRestaurants = restaurants
             self.tableView.reloadData()
             
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.stopAnimations), userInfo: nil, repeats: false)
-        
+            //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.stopAnimations), userInfo: nil, repeats: false)
+            self.restCount = restaurants.count
+            self.yelpRefresh.endRefreshing()
+            
+        }
+    }
+    
+    func loadMoreRestaurants(){
+       // print("reload")
+
+        API.getMorerestaurants(numberOfRestaurants: self.restCount + 10,lat: self.lat, long: self.long) { (restaurants) in
+            guard let restaurants = restaurants else {
+                return
+            }
+    
+            self.restaurantsArray = restaurants
+            self.filteredRestaurants = restaurants
+            self.restCount = self.restCount + restaurants.count
+            self.tableView.reloadData()
             self.yelpRefresh.endRefreshing()
             
         }
     }
 }
 
-extension RestaurantsViewController: SkeletonTableViewDataSource {
-    
-    
-    func startAnimations() {
-        // Start Skeleton
-        view.isSkeletonable = true
-        
-        animationView = .init(name: "4762-food-carousel")
-        // Set the size to the frame
-        //animationView!.frame = view.bounds
-        animationView!.frame = CGRect(x: view.frame.width / 3 , y: 156, width: 100, height: 100)
-
-        // fit the
-        animationView!.contentMode = .scaleAspectFit
-        view.addSubview(animationView!)
-        
-        // 4. Set animation loop mode
-        animationView!.loopMode = .loop
-
-        // Animation speed - Larger number = faste
-        animationView!.animationSpeed = 10
-
-        //  Play animation
-        animationView!.play()
-        
-    }
-    
-
-    @objc func stopAnimations() {
-        // ----- Stop Animation
-        animationView?.stop()
-        // ------ Change the subview to last and remove the current subview
-        view.subviews.last?.removeFromSuperview()
-        view.hideSkeleton()
-        refresh = false
-    }
-    
-
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "RestaurantCell"
-    }
-    
-}
 
 // ––––– TableView Functionality –––––
 extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -156,22 +130,34 @@ extension RestaurantsViewController: UITableViewDelegate, UITableViewDataSource 
         return filteredRestaurants.count
     }
     
+    func run(after wait: TimeInterval, closure: @escaping () -> Void) {
+        let queue = DispatchQueue.main
+        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == restCount{
+            loadMoreRestaurants()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
+        
         // Create Restaurant Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell") as! RestaurantCell
         // Set cell's restaurant
         cell.r = filteredRestaurants[indexPath.row]
 
         // Initialize skeleton view every time cell gets initialized
-        cell.showSkeleton()
+      //  cell.showSkeleton()
         
         // Stop animation after like .5 seconds
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
-            cell.stopSkeletonAnimation()
-            cell.hideSkeleton()
+        func refresh() {
+            run(after: 2) {
+               self.yelpRefresh.endRefreshing()
+            }
         }
-        
         
         return cell
     }
