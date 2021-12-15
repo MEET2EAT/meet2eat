@@ -54,8 +54,8 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
         self.dismiss(animated: true, completion: nil)
        // HostViewController?.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func onBackButton(_ sender: Any) {
-        // The object has been saved.
         self.dismiss(animated: true, completion: nil)
     }
     

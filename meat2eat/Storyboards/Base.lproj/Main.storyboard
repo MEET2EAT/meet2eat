@@ -3,8 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -75,7 +73,7 @@
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="gfn-Dc-aH7"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.95005562379999997" green="0.9265011661" blue="0.85724335529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,17 +97,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is the post image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXJ-5S-mb7">
-                                <rect key="frame" x="123" y="430" width="169" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-53-Usw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="77" width="414" height="734"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="411" id="Gl3-T6-HX8" customClass="PostCell" customModule="meat2eat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="411"/>
@@ -149,6 +141,7 @@
                                                 <constraint firstItem="QOh-Sm-OY7" firstAttribute="top" secondItem="73n-qp-jpz" secondAttribute="top" constant="8" id="ytn-mb-4Ax"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="RwF-iH-AjG" id="hab-Yw-QnZ"/>
                                             <outlet property="photoView" destination="QOh-Sm-OY7" id="Wig-no-QlN"/>
@@ -185,6 +178,7 @@
                                                 <constraint firstItem="89W-a2-6Jy" firstAttribute="leading" secondItem="CBn-wf-ohJ" secondAttribute="leading" constant="16" id="rZh-b5-HRM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="commentLabel" destination="sB4-WN-eL4" id="b0S-4h-4IR"/>
                                             <outlet property="nameLabel" destination="89W-a2-6Jy" id="VJC-LX-ZRD"/>
@@ -211,9 +205,15 @@
                                                 <constraint firstAttribute="trailing" secondItem="Q6e-Yr-bE6" secondAttribute="trailing" constant="8" id="huI-rM-777"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGR-sH-YtA">
+                                <rect key="frame" x="0.0" y="-48" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0wy-Ma-OHr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,6 +291,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6yF-Vf-lfC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="NEW POST" id="bS4-qO-27d">
                                         <barButtonItem key="leftBarButtonItem" title="BACK" id="k3O-g3-wfH">
@@ -347,9 +348,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TX4-K8-MTT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" id="b2k-Fc-a8w"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i1c-6K-mqG">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" id="i1c-6K-mqG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -360,15 +366,17 @@
             </objects>
             <point key="canvasLocation" x="102.89855072463769" y="97.767857142857139"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="91V-jg-dve">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QaP-Ji-Lwu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="dK5-gg-ltI"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile_tab" id="dK5-gg-ltI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qhk-fX-va5">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" id="qhk-fX-va5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -379,15 +387,17 @@
             </objects>
             <point key="canvasLocation" x="1742" y="98"/>
         </scene>
-        <!--Post-->
+        <!--Navigation Controller-->
         <scene sceneID="fbC-x3-luf">
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="UXW-yx-Jbk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" id="nIK-8m-4f0"/>
+                    <tabBarItem key="tabBarItem" title="" image="post_img" id="nIK-8m-4f0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MAH-Oo-Ppt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -412,6 +422,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Get the restaurant detail..">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="vV1-MY-ftG" kind="presentation" modalPresentationStyle="fullScreen" id="2Ou-ty-PXq"/>
@@ -472,7 +483,9 @@
                                 <rect key="frame" x="111" y="618" width="159" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="OnSetTableButton:" destination="ts2-2V-BSC" eventType="touchUpInside" id="Kzv-CF-HNV"/>
                                 </connections>
@@ -491,33 +504,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar hidden="YES" alpha="0.60000002384185791" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ctw-pE-cIl">
-                                <rect key="frame" x="0.0" y="35" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <color key="tintColor" name="AccentColor"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" systemColor="labelColor"/>
-                                    <color key="textShadowColor" systemColor="linkColor"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Create table" id="n8Z-0V-R4c">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="dJB-ja-zNg">
-                                            <connections>
-                                                <action selector="onBackButton:" destination="ts2-2V-BSC" id="LQN-nH-r5l"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzI-pe-bU4">
+                                <rect key="frame" x="0.0" y="-40" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-ma-d8M">
+                                        <rect key="frame" x="0.0" y="84" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="1" green="0.6505009725795321" blue="0.1859316026932476" alpha="0.47352883042089194" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <items>
+                                            <navigationItem title="Title" id="Sb3-ya-nZj">
+                                                <barButtonItem key="leftBarButtonItem" style="plain" id="MgW-Ie-k01">
+                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="N9d-Qi-Uxv">
+                                                        <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Back">
+                                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94830018279999995" green="0.64629060029999996" blue="0.2272090614" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pCD-C3-gyn"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="FxE-Ub-EZf"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateMeet" destination="NPx-8N-fzP" id="q6D-S4-ksg"/>
@@ -529,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgY-Km-ovq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="1617"/>
+            <point key="canvasLocation" x="102.89855072463769" y="1616.5178571428571"/>
         </scene>
         <!--Search Restaurant View Controller-->
         <scene sceneID="dNF-q4-SOW">
@@ -543,6 +561,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.95005562379999997" green="0.9265011661" blue="0.85724335529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" id="TnE-et-rZa" customClass="RestaurantCell" customModule="meat2eat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="172.5"/>
@@ -647,6 +666,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
@@ -667,12 +687,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW9-zM-Fdg">
-                                <rect key="frame" x="156.5" y="32" width="101" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" systemColor="tintColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <searchBar contentMode="redraw" text="" placeholder="Search Restaurants" translatesAutoresizingMaskIntoConstraints="NO" id="ZY7-Kw-Pum">
                                 <rect key="frame" x="0.0" y="93" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -684,33 +698,44 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyu-ZR-FSH">
-                                <rect key="frame" x="331" y="58" width="83" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Search" imagePadding="0.0" titleAlignment="leading">
-                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="small"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="searchButtonOnAction:" destination="vV1-MY-ftG" eventType="touchUpInside" id="5T8-li-iDW"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tjg-px-uYF">
+                                <rect key="frame" x="0.0" y="-35" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWM-oV-f5A">
+                                        <rect key="frame" x="0.0" y="84" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                                        <items>
+                                            <navigationItem title="Restaurants" id="4Tf-0S-w2o">
+                                                <barButtonItem key="leftBarButtonItem" style="plain" id="V2d-tS-DWB">
+                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="39z-3d-Bcx">
+                                                        <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                                    </button>
+                                                    <connections>
+                                                        <action selector="backBtn:" destination="vV1-MY-ftG" id="cyl-mZ-gsh"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gE0-8l-To4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95005562379999997" green="0.9265011661" blue="0.85724335529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ZY7-Kw-Pum" firstAttribute="top" secondItem="jyu-ZR-FSH" secondAttribute="bottom" constant="4" id="7z0-16-jaY"/>
-                            <constraint firstAttribute="trailing" secondItem="jyu-ZR-FSH" secondAttribute="trailing" id="C1l-Yo-cd9"/>
-                            <constraint firstItem="jyu-ZR-FSH" firstAttribute="top" secondItem="UAJ-Vx-S6W" secondAttribute="top" constant="58" id="DKz-bV-A6H"/>
                             <constraint firstItem="ZY7-Kw-Pum" firstAttribute="leading" secondItem="gE0-8l-To4" secondAttribute="leading" id="Kk5-mx-HgI"/>
                             <constraint firstItem="ZY7-Kw-Pum" firstAttribute="top" secondItem="gE0-8l-To4" secondAttribute="top" constant="49" id="Nid-eb-jG5"/>
-                            <constraint firstItem="jW9-zM-Fdg" firstAttribute="top" secondItem="UAJ-Vx-S6W" secondAttribute="top" constant="32" id="Pb5-WP-KIn"/>
                             <constraint firstItem="ZY7-Kw-Pum" firstAttribute="trailing" secondItem="gE0-8l-To4" secondAttribute="trailing" id="TME-du-7dY"/>
-                            <constraint firstItem="jW9-zM-Fdg" firstAttribute="centerX" secondItem="UAJ-Vx-S6W" secondAttribute="centerX" id="ra8-PE-7qH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="ZY7-Kw-Pum" id="M7l-7z-Cyl"/>
-                        <outlet property="searchButton" destination="jyu-ZR-FSH" id="uOF-f2-wsh"/>
                         <outlet property="tableView" destination="IbY-xY-d0F" id="IVK-gY-8Re"/>
                     </connections>
                 </viewController>
@@ -846,8 +871,8 @@
                                                         <constraint firstAttribute="width" constant="80" id="pXc-h3-nna"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ikemen Kuma" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ula-wF-WE7">
-                                                    <rect key="frame" x="19" y="107" width="102.5" height="39"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ula-wF-WE7">
+                                                    <rect key="frame" x="19" y="107" width="85.5" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -930,7 +955,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iv2-Ue-FCt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -1005,6 +1030,7 @@
                                                 <constraint firstItem="Fqr-Ae-CDw" firstAttribute="leading" secondItem="uG1-Tj-xIm" secondAttribute="trailing" constant="8" id="vYk-ct-cz8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="currentLabel" destination="ck7-mb-pnt" id="TAt-6g-qGi"/>
                                             <outlet property="maxLabel" destination="emB-Ef-4YH" id="Kwe-w7-ngX"/>
@@ -1015,6 +1041,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIy-Md-rsW">
+                                <rect key="frame" x="0.0" y="-48" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DxF-br-bxK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1022,14 +1053,20 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9vB-As-5Uq">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="fHI-qH-zKR">
-                            <connections>
-                                <segue destination="Xwf-Ma-ZI1" kind="presentation" identifier="filterSegue" id="i6C-D8-iSq"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" style="plain" id="T00-Nh-gmp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="aeG-Z7-thV">
+                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Filter"/>
+                                <connections>
+                                    <segue destination="Xwf-Ma-ZI1" kind="presentation" identifier="filterSegue" id="Nhn-6Y-IoF"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="itO-Td-1Q0">
+                        <barButtonItem key="rightBarButtonItem" title="Host" style="plain" id="itO-Td-1Q0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3K5-Pw-LKi">
-                                <rect key="frame" x="328" y="5" width="66" height="34.5"/>
+                                <rect key="frame" x="328" y="0.0" width="66" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Host"/>
@@ -1082,6 +1119,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vvB-eW-dPV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="Filter" id="JQM-v2-xpn">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="MdU-pw-bNf">
@@ -1135,24 +1173,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndU-9g-G4d">
-                                <rect key="frame" x="22" y="44" width="55" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="cancel_img"/>
-                                <connections>
-                                    <action selector="cancel:" destination="kQU-Aa-eGq" eventType="touchUpInside" id="YBL-j1-RBt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCI-k3-7yd">
-                                <rect key="frame" x="332" y="43" width="46" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="save_img"/>
-                                <connections>
-                                    <action selector="save:" destination="kQU-Aa-eGq" eventType="touchUpInside" id="VVz-qB-QFc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txe-Ho-lg3">
                                 <rect key="frame" x="56" y="270" width="83" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1201,6 +1221,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="its-Kp-Dqe">
+                                <rect key="frame" x="0.0" y="-40" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-T3-cQk">
+                                        <rect key="frame" x="0.0" y="84" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                                        <items>
+                                            <navigationItem title="Title" id="go2-ah-CRL">
+                                                <barButtonItem key="leftBarButtonItem" style="plain" id="pqP-7h-TfX">
+                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ndU-9g-G4d">
+                                                        <rect key="frame" x="20" y="0.0" width="55" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="cancel_img"/>
+                                                        <connections>
+                                                            <action selector="cancel:" destination="kQU-Aa-eGq" eventType="touchUpInside" id="YBL-j1-RBt"/>
+                                                        </connections>
+                                                    </button>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" style="plain" id="fNt-Wm-Gxg">
+                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="UCI-k3-7yd">
+                                                        <rect key="frame" x="340" y="0.0" width="54" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="save_img"/>
+                                                        <connections>
+                                                            <action selector="save:" destination="kQU-Aa-eGq" eventType="touchUpInside" id="VVz-qB-QFc"/>
+                                                        </connections>
+                                                    </button>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pYx-mZ-qEC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1276,6 +1334,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67V-a1-JK0">
+                                <rect key="frame" x="0.0" y="-48" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WYs-kg-jUw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1311,23 +1374,21 @@
         <image name="cancel_img" width="30" height="30"/>
         <image name="edit_img" width="30" height="30"/>
         <image name="image_placeholder" width="375" height="375"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="placeimg_100_100_arch" width="100" height="100"/>
+        <image name="post_img" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
         <image name="save_img" width="30" height="30"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
