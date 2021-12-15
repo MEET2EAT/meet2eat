@@ -14,7 +14,7 @@ struct API {
     
     static func getMorerestaurants( numberOfRestaurants: Int!, lat: Double, long: Double, completion: @escaping ([Restaurant]?) -> Void){
         let apikey = "PZQrOE4SLDFToPuNaquxUdML3_U_7Mcz2V2N9xl377XzGeCHaE2dIKWgY4nixaYGnSWMjHjYGoeE9d9G9JLUrRQdXOQChvhMB4HyQompGdt5toD3IuVKm0rV7oiaYXYx"
-        let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?limit=50&offset=\(numberOfRestaurants ?? 0)latitude=\(lat)&longitude=\(long)&radius=100000")!
+        let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?limit=10&offset=\(numberOfRestaurants ?? 0)latitude=\(lat)&longitude=\(long)")!
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
 
         request.setValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
@@ -48,8 +48,7 @@ struct API {
         // ––––– TODO: Add your own API key!
         let apikey = "PZQrOE4SLDFToPuNaquxUdML3_U_7Mcz2V2N9xl377XzGeCHaE2dIKWgY4nixaYGnSWMjHjYGoeE9d9G9JLUrRQdXOQChvhMB4HyQompGdt5toD3IuVKm0rV7oiaYXYx"
         
-       let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?limit=50&latitude=\(lat)&longitude=\(long)&radius=100000")!
-    //    let url = URL(string: "https://api.yelp.com/v3/businesses/search?term=restaurants")!
+       let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?limit=10&latitude=\(lat)&longitude=\(long)")!
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
         request.setValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
@@ -65,8 +64,8 @@ struct API {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 let restDictionaries = dataDictionary["businesses"] as! [[String: Any]]
+                print("something")
                 print(restDictionaries)
-                
                 let restaurants = restDictionaries.map({ Restaurant.init(dict: $0) })
             
                 return completion(restaurants)
