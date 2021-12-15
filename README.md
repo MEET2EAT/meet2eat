@@ -160,12 +160,11 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 <img src="G5hDvyS5.gif" width=200>
 
 ## Schema 
-1. Users
-2. Posts
+1. POSTS
+2. User
 3. Comments
-4. Likes/Hearts
-5. Table
-6. Restaurant
+4. Table2Meet
+
 
 
 ### Models
@@ -196,6 +195,8 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 
 
 #### Comments
+| Property      | Type     | Description |
+| ------------- | -------- | ------------|
 | objectId      | String   | registered as table id (default field) |
 | createdAt     | DateTime | date when the table is created (default field) |
 | updatedAt     | DateTime | date when the table is updated (default field) |
