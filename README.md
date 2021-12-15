@@ -194,6 +194,7 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 | password      | String| password for user|
 | email         | String | user email|
 
+
 #### Comments
 | objectId      | String   | registered as table id (default field) |
 | createdAt     | DateTime | date when the table is created (default field) |
