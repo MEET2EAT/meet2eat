@@ -14,7 +14,6 @@ let liveQueryClient = ParseLiveQuery.Client()
 
 class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
     
-
     @IBOutlet weak var MeetDateLabel: UILabel!
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var RestaurantLocation: UILabel!
@@ -35,13 +34,11 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     var userList = [PFUser]()
     var host = PFUser()
     
-    /// <#Description#>
     override func viewDidLoad() {
         super.viewDidLoad()
         slotsCollectionView.delegate = self
         slotsCollectionView.dataSource = self
         //self.loadGuest()
-        
         //slotsCollectionView.reloadData()
     }
     
@@ -81,14 +78,12 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             if(self.filledSlots > indexPath.row){
                 do {
                     //print("DDDDCELLLLLLLLLLLL")
-                   
                     var user_ = PFUser();
                     if(indexPath.row == 0){
                         user_ = self.host
                     }else if(self.userList.isEmpty == false){
                         //print("User________")
                         user_ = self.userList[indexPath.row-1]
-
                     }
                     print(user_)
                     let query = PFUser.query()
@@ -113,7 +108,6 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             }
             return cell
         }
-
     
     @IBAction func botButtonOnAction(_ sender: UIButton) {
         //print("BUTONONONONONO")
@@ -143,7 +137,6 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
                     }else{
                         print("something wrong")
                     }
-
                 }
                
             }else if (buttonTitle == "Join"){
@@ -166,6 +159,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         }
         
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;
     }
@@ -173,6 +167,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBAction func backOnAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     func loadTable2Eat(){
         
         let query = PFQuery(className: "Table2Meet")
@@ -191,10 +186,8 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
                 self.userList = table["guestsId"] as! [PFUser]
             }
             self.filledSlots = self.userList.count + 1
-            self.totalSlots_ = (table["slots"] as! Int) + 1
+            self.totalSlots_ = (table["slots"] as! Int)
     
-            
-     
             self.TotalSlots.text = "\(self.totalSlots_ - 1)"
             self.FilledSlots.text = "\(self.filledSlots)"
             self.RestaurantName.text = "\(table["ResName"] as! String)"
@@ -237,9 +230,5 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
                 }
             }
         }
-        
-        
-        
     }
-       
 }

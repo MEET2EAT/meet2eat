@@ -35,6 +35,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let query = PFQuery(className: "Table2Meet")
         query.includeKey("host")
         query.whereKey("slots", lessThanOrEqualTo: capacityFilter)
+        query.order(byDescending: "createdAt")
         numberOfLoad = 20
         query.limit = numberOfLoad
         
@@ -103,6 +104,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let query = PFQuery(className: "Table2Meet")
         query.includeKey("host")
         query.whereKey("slots", lessThanOrEqualTo: capacityFilter)
+        query.order(byDescending: "createdAt")
         query.limit = numberOfLoad
         
         query.findObjectsInBackground{ (tables, error) in
@@ -112,7 +114,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.tableView.reloadData()
             }
         }
-        
     }
     
     func filterDismissed() {
