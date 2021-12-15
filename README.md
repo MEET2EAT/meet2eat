@@ -169,29 +169,42 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 
 
 ### Models
-#### POST
+#### POSTS
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
 | objectId      | String   | unique id for the user post(default field) |
-| user        | Pointer to User| image user |
+| createdAt     | DateTime | date when post is created (default field) |
+| ACL           | ACL      | rw permission (default field) |
+| updatedAt     | DateTime | date when post is last updated (default field) |
 | image         | File     | image that user posts |
 | caption       | String   | image caption by user |
-| commentsCount | Number   | number of comments that has been posted to an image |
-| likesCount    | Number   | number of likes for the post |
-| createdAt     | DateTime | date when post is created (default field) |
-| updatedAt     | DateTime | date when post is last updated (default field) |
+| author        | Pointer to User| the user of the post |
+| comments      | Array| coletion of Pointer to User with their comment |
 
-#### PROFILE
+
+#### User
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
 | objectId      | String   | unique id for the user post(default field) |
-| user          | Pointer to User| username|
-| password      | String| password for user|
-| profileImage  | File     | image that user icon |
 | createdAt     | DateTime | date when post is created (default field) |
 | updatedAt     | DateTime | date when post is last updated (default field) |
+| ACL           | ACL      | rw permission (default field) |
+| username      | String | user update their name |
+| image         | File  | image that user icon |
+| password      | String| password for user|
+| email         | String | user email|
 
-#### Table
+#### Comments
+| objectId      | String   | registered as table id (default field) |
+| createdAt     | DateTime | date when the table is created (default field) |
+| updatedAt     | DateTime | date when the table is updated (default field) |
+| ACL           | ACL      | rw permission (default field) |
+| text          | String   | store comments|
+| post          | Pointer to Posts| the post objectID |
+| author        | Pointer to User| the user objectID |
+
+
+#### Table2Meet
 | Property      | Type     | Description |
 | ------------- | -------- | ------------|
 | objectId      | String   | registered as table id (default field) |
@@ -199,14 +212,11 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 | updatedAt     | DateTime | date when the table is updated (default field) |
 | ACL           | ACL      | rw permission (default field) |
 | host          | Pointer to User | the host of the table |
-| participant   | Array Pointers to User | the participants of the table including host and guests |
-| tableImg      | File     | image icon for table | 
-| description   | String   | description for table |
-| restaurantName| String   | the name of the restaurant where to open tb |
-| restaurantLoc | object(string)  | The street of the location address of the table location = {street, state, city, country, zipcode} |
-| current       | Integer  | number of people accepted in the table currently |
-| max           | Integer  | maximum number of people can participate to the table |
-
+| ResName       | String   | the name of the restaurant where to open tb |
+| location      | object(string)  | The street of the location address of the table location = {street, state, city, country, zipcode} |
+| slots         | Integer  | maximum number of people can participate to the table |
+| guestsId      | Array Pointers to User | the participants of the table including host and guests |
+| detailMeet    | String   | description for table |
 
 
 ### Networking
