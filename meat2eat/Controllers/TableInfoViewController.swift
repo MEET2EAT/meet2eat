@@ -72,11 +72,10 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
         // let xURL = Bundle.main.url(forResource: "KumaProfilePicture", withExtension: "png")
          cell.UserImage.image = x
 
-         //print("Load cell-------")
+         // print("Load cell-------")
          //print(indexPath.row)
          
             if(self.filledSlots > indexPath.row){
-                do {
                     //print("DDDDCELLLLLLLLLLLL")
                     var user_ = PFUser();
                     if(indexPath.row == 0){
@@ -85,26 +84,32 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
                         //print("User________")
                         user_ = self.userList[indexPath.row-1]
                     }
-                    print(user_)
+                   
                     let query = PFUser.query()
+                    
                     query?.whereKey("objectId", contains: user_.objectId)
-                    let userInfo = try query?.findObjects() as! [PFUser]
-                    if(indexPath.row == 0){
-                        let hostName = (userInfo[0]["username"] as? String)
-                        let hostTable = hostName! + "'s"
-                        self.HostnameLabel.text =  hostTable
+                    
+                    query?.findObjectsInBackground(){(userInfo, error) in
+                        if userInfo != nil {
+                            if(indexPath.row == 0){
+                                let hostName = (userInfo?[0]["username"] as? String)
+                                let hostTable = hostName! + "'s"
+                                self.HostnameLabel.text =  hostTable
+                            }
+                            if(userInfo?.isEmpty == false){
+                                cell.UserName.text = userInfo?[0]["username"] as? String
+                                let imageFile = userInfo?[0]["image"] as!PFFileObject
+                                let urlString = imageFile.url!
+                                let url = URL(string: urlString)!
+                                cell.UserImage.af.setImage(withURL: url)
+                               
+                            }
+                        }else{
+                            print("something wrong")
+                        }
+                        
                     }
-                    if(userInfo.isEmpty == false){
-                       cell.UserName.text = userInfo[0]["username"] as? String
-                        let imageFile = userInfo[0]["image"] as!PFFileObject
-                        let urlString = imageFile.url!
-                        let url = URL(string: urlString)!
-                        cell.UserImage.af.setImage(withURL: url)
-                       
-                    }
-                } catch {
-                    print(error)
-                }
+                
             }
             return cell
         }
