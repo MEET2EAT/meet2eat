@@ -22,11 +22,11 @@
                                     <constraint firstAttribute="height" constant="141" id="s5R-GH-mNj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🅼🅴🆃 2 🅴🅰🆃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onC-4O-LON">
-                                <rect key="frame" x="61" y="474" width="292" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🅼🅴🅴🆃 2 🅴🅰🆃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onC-4O-LON">
+                                <rect key="frame" x="40.5" y="474" width="333.5" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="JHK-At-4xi"/>
-                                    <constraint firstAttribute="width" constant="292" id="Sgv-VR-7Cu"/>
+                                    <constraint firstAttribute="height" constant="45" id="R71-Ec-G9e"/>
+                                    <constraint firstAttribute="width" constant="333.5" id="vQv-RI-jhl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
@@ -36,10 +36,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.94965022799999999" green="0.92622119189999996" blue="0.85880762340000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="onC-4O-LON" firstAttribute="top" secondItem="ZiX-an-lh6" secondAttribute="bottom" constant="8" id="B9T-Ll-ySZ"/>
                             <constraint firstItem="ZiX-an-lh6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BC5-AE-cEM"/>
+                            <constraint firstItem="onC-4O-LON" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OtX-6h-sNb"/>
+                            <constraint firstItem="onC-4O-LON" firstAttribute="top" secondItem="ZiX-an-lh6" secondAttribute="bottom" constant="8" id="caj-VJ-TaK"/>
                             <constraint firstItem="ZiX-an-lh6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-52.5" id="d7M-fn-kTD"/>
-                            <constraint firstItem="onC-4O-LON" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tdd-z7-ep8"/>
                         </constraints>
                     </view>
                 </viewController>

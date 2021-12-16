@@ -29,6 +29,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         PostViewController.instance.setListener(listener: self)
+        tableView.keyboardDismissMode = .interactive
         
         //Added for pull to refresh
         myRefreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
