@@ -66,9 +66,9 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlotCell", for: indexPath) as! SlotCollectionViewCell
          cell.UserName.text = "Empty"
                   
-         let x = UIImage(named: "KumaProfilePicture")
+        // let x = UIImage(named: "person")
         // let xURL = Bundle.main.url(forResource: "KumaProfilePicture", withExtension: "png")
-         cell.UserImage.image = x
+       //  cell.UserImage.image = x
 
          // print("Load cell-------")
          //print(indexPath.row)
