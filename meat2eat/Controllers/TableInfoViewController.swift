@@ -10,7 +10,7 @@ import Parse
 import ParseLiveQuery
 
 
-let liveQueryClient = ParseLiveQuery.Client()
+//let liveQueryClient = ParseLiveQuery.Client()
 
 class TableInfoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, CALayerDelegate{
     
@@ -18,14 +18,9 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var RestaurantLocation: UILabel!
     @IBOutlet weak var HostnameLabel: UILabel!
-    
     @IBOutlet weak var JoinButton: UIButton!
-    
     @IBOutlet weak var FilledSlots: UILabel!
-    
-
     @IBOutlet weak var slotsCollectionView: UICollectionView!
-    
     @IBOutlet weak var TotalSlots: UILabel!
     var totalSlots_ = 12
     var filledSlots = 0
@@ -34,12 +29,15 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
     var userList = [PFUser]()
     var host = PFUser()
     
+    @IBOutlet weak var dateLable: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         slotsCollectionView.delegate = self
         slotsCollectionView.dataSource = self
         //self.loadGuest()
         //slotsCollectionView.reloadData()
+        dateLable.layer.position.y = MeetDateLabel.layer.position.y
     }
     
     
@@ -193,7 +191,7 @@ class TableInfoViewController: UIViewController, UICollectionViewDataSource, UIC
             self.filledSlots = self.userList.count + 1
             self.totalSlots_ = (table["slots"] as! Int)
     
-            self.TotalSlots.text = "\(self.totalSlots_ - 1)"
+            self.TotalSlots.text = "\(self.totalSlots_)"
             self.FilledSlots.text = "\(self.filledSlots)"
             self.RestaurantName.text = "\(table["ResName"] as! String)"
             self.RestaurantLocation.text = "\(table["location"] as! String)"

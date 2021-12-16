@@ -15,6 +15,7 @@ import CoreLocation
 protocol DisplayViewControllerDelegate : NSObjectProtocol{
     func doSomethingWith(data: Restaurant)
 }
+
 class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
     weak var delegate : DisplayViewControllerDelegate?
     
@@ -76,11 +77,11 @@ class RestaurantsViewController: UIViewController, CLLocationManagerDelegate{
         tableView.refreshControl = yelpRefresh
     }
     
-    @IBAction func searchButtonOnAction(_ sender: Any) {
-        loadRestaurants()
-        searchBar.text = ""
-        self.viewDidLoad()
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
     func loadRestaurants(){
        // print("reload")
         

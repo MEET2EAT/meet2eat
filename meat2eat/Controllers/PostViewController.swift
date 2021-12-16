@@ -9,11 +9,24 @@ import UIKit
 import AlamofireImage
 import Parse
 
+protocol postDelegate: NSObjectProtocol {
+    func postDismissed()
+}
+
 class PostViewController: UIViewController , UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
+    class var instance: PostViewController {
+        struct Static {
+            static let instance: PostViewController = PostViewController()
+        }
+        return Static.instance
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var imageInputAlert: UILabel!
+    private var listener: postDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +51,7 @@ class PostViewController: UIViewController , UIImagePickerControllerDelegate,UIN
             post.saveInBackground { (succeeded, error)  in
                 if (succeeded) {
                     // The object has been saved.
+                    PostViewController.instance.sendpostDismissed(modelChanged: true)
                     self.dismiss(animated: true, completion: nil)
                     print("Saved")
                 } else {
@@ -77,6 +91,15 @@ class PostViewController: UIViewController , UIImagePickerControllerDelegate,UIN
         // The object has been saved.
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func setListener(listener: postDelegate) {
+        self.listener = listener
+    }
+    
+    func sendpostDismissed(modelChanged: Bool) {
+        listener?.postDismissed()
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -9,8 +9,8 @@ import Parse
 import AlamofireImage
 import MessageInputBar
  
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
-
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate, postDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
     let commentBar = MessageInputBar()
     var showsCommentBar = false
@@ -28,6 +28,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        PostViewController.instance.setListener(listener: self)
         
         //Added for pull to refresh
         myRefreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
@@ -39,8 +40,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl){
-        viewDidAppear(true)
-        self.myRefreshControl.endRefreshing()
+        run(after: 1.3) {
+            self.viewDidAppear(true)
+            self.myRefreshControl.endRefreshing()
+        }
+    }
+    
+    func run(after wait: TimeInterval, closure: @escaping() -> Void) {
+        let queue = DispatchQueue.main
+        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
+    }
+    
+    func postDismissed() {
+        run(after: 0.3) {
+            self.viewDidAppear(true)
+            self.myRefreshControl.endRefreshing()
+        }
     }
     
     @objc func keyboardWillBeHidden(note: Notification) {

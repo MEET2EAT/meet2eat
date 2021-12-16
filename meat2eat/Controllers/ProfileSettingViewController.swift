@@ -70,9 +70,8 @@ class ProfileSettingViewController: UIViewController, UIImagePickerControllerDel
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             // show the alert
             self.present(alert, animated: true, completion: nil)
-            print("chaing password failed")
+            print("changing password failed")
         }
-        
         
         let imageData = profilePic.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
