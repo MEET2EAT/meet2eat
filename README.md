@@ -7,74 +7,12 @@
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
-## Weekly User Story Check-off
-### Unit 13
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-<img src='w13.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-Host
-<img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-Table Info
-<img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-Pull to refresh feature
-<img src='unit13_refresh.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-Infinite scrolling feature
-<img src='unit13_infiniteScroll.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-
-
-### Unit 12
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-<img src='unit12_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-<img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='unit12_filter.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-<img src='unit12_profile.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-
-### Unit 11
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-
-<img src='unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-<img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
-<img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
-### Unit 10
-- [x] Work distribution for each team member.
-- [x] Project prototype.
-- [x] Install CocoaPod.
-- [x] Updated status of issues in Project board. (2pts)
-- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
-- [x] Completed user stories checked-off in README. (2pts)
-- [x] Gifs created to show build progress and added to README. (3pts)
-
-#### Build Progress Walkthrough
-
-<img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
-<img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
-
-
-
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [Weekly User Story Check-off](#Weekly-User-Story-Check-off)
 
 ## Overview
 ### Description
@@ -308,3 +246,65 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
     - (Delete) Delete existing table
 - Create Table Screen
     - (Create/POST) Create a table for host and users
+
+
+## Weekly User Story Check-off
+### Unit 13
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+<img src='w13.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+Host
+<img src='host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+Table Info
+<img src='tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+Pull to refresh feature
+<img src='unit13_refresh.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+Infinite scrolling feature
+<img src='unit13_infiniteScroll.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+
+
+### Unit 12
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+<img src='unit12_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+<img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit12_filter.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+<img src='unit12_profile.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+
+### Unit 11
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+
+<img src='unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
+<img src='unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
+<img src='unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+### Unit 10
+- [x] Work distribution for each team member.
+- [x] Project prototype.
+- [x] Install CocoaPod.
+- [x] Updated status of issues in Project board. (2pts)
+- [x] Sprint planned for next week (Issues created, assigned & added to project board). (3pts)
+- [x] Completed user stories checked-off in README. (2pts)
+- [x] Gifs created to show build progress and added to README. (3pts)
+
+#### Build Progress Walkthrough
+
+<img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
