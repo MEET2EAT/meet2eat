@@ -10,7 +10,7 @@
 
 ## Demo Section
 ### Pitch PDF
-
+[Local Demo Pitch Slide](demoPitch.pdf)
 
 ### App Walkthrough
 
