@@ -7,6 +7,18 @@
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
+
+## Demo Section
+### Pitch PDF
+
+
+### App Walkthrough
+
+
+### Demo Build Environment and Requirement
+The Current Version is designed for Iphone 11 simulator iOS 15. Auto layout is already included in the design; however, Meet2Eat is still under development, and there are still testing, debugging, and bug fixing needed for different devices. Please build and run on Iphone 11 simulator til future update.
+
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
