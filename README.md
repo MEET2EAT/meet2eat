@@ -19,17 +19,15 @@
 ## Demo Section
 ### Pitch PDF
 [Local Demo Pitch Slide](demoPitch.pdf)
+</br>Presentation is recorded by local CodePath TechFellow in the local demo day.
 
 ### App Walkthrough
-<img src='img/demo_signIn&signUp.gif' title='Login Video Walkthrough' width='250' alt='Login Video Walkthrough' />
-<img src='img/demo_tablePage.gif' title='Table Video Walkthrough' width='250' alt='Table Video Walkthrough' />
-<img src='img/demo_lobbyPage.gif' title='Lobby Video Walkthrough' width='250' alt='Lobby Video Walkthrough' />
-<img src='img/demo_profilePage.gif' title='Profile Video Walkthrough' width='250' alt='Profile Video Walkthrough' />
+<img src='img/demo_signIn&signUp.gif' title='Login Video Walkthrough' width='250' alt='Login Video Walkthrough' /><img src='img/demo_tablePage.gif' title='Table Video Walkthrough' width='250' alt='Table Video Walkthrough' />
 
+<img src='img/demo_lobbyPage.gif' title='Lobby Video Walkthrough' width='250' alt='Lobby Video Walkthrough' /><img src='img/demo_profilePage.gif' title='Profile Video Walkthrough' width='250' alt='Profile Video Walkthrough' />
 
 ### Demo Build Environment and Requirement
 The Current Version is designed for Iphone 11 simulator iOS 15. Auto layout is already included in the design; however, Meet2Eat is still under development, and there are still testing, debugging, and bug fixing needed for different devices. Please build and run on Iphone 11 simulator til future update.
-
 
 ### Contact Info
 * Vincent Hew
@@ -38,7 +36,6 @@ The Current Version is designed for Iphone 11 simulator iOS 15. Auto layout is a
 ## Overview
 ### Description
 Meet2Eat is an iOS app that connects people through thoughtful conversations during meals. By giving away discounts to our users to encourage them connecting to different people and experiencing a different perspective of the world and community. Meet2Eat: a place for good food and good company to gather around.
-
 
 ## Product Spec
 
@@ -110,7 +107,6 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 ## Wireframes
 <img src="https://media.discordapp.net/attachments/897965541472501763/898770550606950431/image0.jpg?width=1178&height=1571" width=500><br>
 
-
 ### [BONUS] Digital Wireframes & Mockups
 
 <img src="https://media.discordapp.net/attachments/897965541971607613/902320984869175326/Screen_Shot_2021-10-25_at_5.20.54_PM.png?width=1874&height=957" width=800><br>
@@ -123,8 +119,6 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 2. User
 3. Comments
 4. Table2Meet
-
-
 
 ### Models
 #### POSTS
@@ -178,7 +172,6 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 | slots         | Integer  | maximum number of people can participate to the table |
 | guestsId      | Array Pointers to User | the participants of the table including host and guests |
 | detailMeet    | String   | description for table |
-
 
 ### Networking
 - Post Screen
@@ -268,7 +261,6 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 - Create Table Screen
     - (Create/POST) Create a table for host and users
 
-
 ## Weekly User Story Check-off
 ### Unit 13
 - [x] Updated status of issues in Project board. (2pts)
@@ -278,15 +270,10 @@ Meet2Eat is an iOS app that connects people through thoughtful conversations dur
 
 #### Build Progress Walkthrough
 <img src='img/w13.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-Host
-<img src='img/host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-Table Info
-<img src='img/tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-Pull to refresh feature
-<img src='img/unit13_refresh.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
-Infinite scrolling feature
-<img src='img/unit13_infiniteScroll.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
 
+<img src='img/host.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><img src='img/tableinfo.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='img/unit13_refresh.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' /><img src='img/unit13_infiniteScroll.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
 
 ### Unit 12
 - [x] Updated status of issues in Project board. (2pts)
@@ -296,8 +283,9 @@ Infinite scrolling feature
 
 #### Build Progress Walkthrough
 <img src='img/unit12_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-<img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='img/unit12_filter.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+
+<img src='https://i.imgur.com/Mc2Eudz.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><img src='img/unit12_filter.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
+
 <img src='img/unit12_profile.gif' title='Video Walkthrough' width='250' alt='video Walkthrough' />
 
 ### Unit 11
@@ -307,12 +295,12 @@ Infinite scrolling feature
 - [x] Gifs created to show build progress and added to README. (3pts)
 
 #### Build Progress Walkthrough
-
 <img src='img/unit11_projectPanel.png' title='Build Walkthrough' width='780' alt='Build Walkthrough' />
-<img src='img/unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='img/unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
-<img src='img/unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-<img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='img/unit11_post.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><img src='img/unit11_lobby.png' title='Build Walkthrough' width='250' alt='Build Walkthrough' />
+
+<img src='img/unit11_restaurant.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /><img src='https://i.imgur.com/LvEJLYV.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
 <img src='https://i.imgur.com/AJEJ5A2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 ### Unit 10
@@ -325,7 +313,7 @@ Infinite scrolling feature
 - [x] Gifs created to show build progress and added to README. (3pts)
 
 #### Build Progress Walkthrough
-
+<img src='img/unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
 <img src='img/unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
-<img src='img/unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+
