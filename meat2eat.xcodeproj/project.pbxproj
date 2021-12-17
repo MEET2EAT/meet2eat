@@ -35,7 +35,6 @@
 		ADE991302739DFDE0098884A /* meat2eatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE9912F2739DFDE0098884A /* meat2eatUITestsLaunchTests.swift */; };
 		B60DB6470720EDC851DE6449 /* Pods_meat2eat_meat2eatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */; };
 		F102537D27543CEC00156785 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102537C27543CEC00156785 /* FilterViewController.swift */; };
-		F17D217727692591008A3B2D /* TableInfoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D217627692591008A3B2D /* TableInfoCollectionViewController.swift */; };
 		F17D217927692742008A3B2D /* TableInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17D217827692742008A3B2D /* TableInfoViewController.swift */; };
 		F1C8A3AA2744B36600229615 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8A3A92744B36600229615 /* TableCell.swift */; };
 		F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB7E65274076BD0014006F /* LobbyViewController.swift */; };
@@ -97,7 +96,6 @@
 		D698F38EEB055EC9FC950140 /* Pods_meat2eat_meat2eatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meat2eat_meat2eatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7D3A2D9DE00C9F030A8BD3 /* Pods-meat2eatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meat2eatTests.debug.xcconfig"; path = "Target Support Files/Pods-meat2eatTests/Pods-meat2eatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F102537C27543CEC00156785 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		F17D217627692591008A3B2D /* TableInfoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInfoCollectionViewController.swift; sourceTree = "<group>"; };
 		F17D217827692742008A3B2D /* TableInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInfoViewController.swift; sourceTree = "<group>"; };
 		F1C8A3A92744B36600229615 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		F1EB7E65274076BD0014006F /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				F17D217827692742008A3B2D /* TableInfoViewController.swift */,
-				F17D217627692591008A3B2D /* TableInfoCollectionViewController.swift */,
 				9122E495274B01F1001D6079 /* LoginViewController.swift */,
 				9122E497274B0231001D6079 /* FeedViewController.swift */,
 				F1EB7E65274076BD0014006F /* LobbyViewController.swift */,
@@ -522,7 +519,6 @@
 				582B4B36274ABC8700EF4CA8 /* RestaurantsViewController.swift in Sources */,
 				91B503C5275336280026B43C /* CommentCell.swift in Sources */,
 				AD741FA227449FC40032822D /* PostViewController.swift in Sources */,
-				F17D217727692591008A3B2D /* TableInfoCollectionViewController.swift in Sources */,
 				F17D217927692742008A3B2D /* TableInfoViewController.swift in Sources */,
 				9122E496274B01F1001D6079 /* LoginViewController.swift in Sources */,
 				F1EB7E66274076BD0014006F /* LobbyViewController.swift in Sources */,

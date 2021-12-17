@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         makeRounded()
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +35,6 @@ class ProfileViewController: UIViewController {
 
         profilePic.af_setImage(withURL: url)
     }
-    
     
     func makeRounded() {
         profilePic.layer.borderWidth = 1

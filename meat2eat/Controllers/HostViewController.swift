@@ -21,8 +21,6 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
     var r: Restaurant!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         checkHost()
     }
 
@@ -56,7 +54,7 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
         }
     }
     
-    @IBAction func onBackButton(_ sender: Any) {
+    @IBAction func backBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -100,4 +98,3 @@ class HostViewController: UIViewController,DisplayViewControllerDelegate {
     }
 
 }
-

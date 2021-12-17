@@ -67,7 +67,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.currentLabel.text = "\(guestCount + 1)"
         cell.maxLabel.text = "\(table["slots"]!)"
         cell.tableImg.af_setImage(withURL: url)
-        
+
         return cell
     }
     
@@ -78,6 +78,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // infinite scroll
         if indexPath.row + 1 == tables.count && tables.count >= 20 {
             loadMore()
         }
