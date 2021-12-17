@@ -1,5 +1,14 @@
 # Meet2Eat
 
+## Table of Contents
+1. [Work Distribution](#Work-Distribution)
+2. [Demo Section](#Demo-Section)
+3. [Overview](#Overview)
+4. [Product Spec](#Product-Spec)
+5. [Wireframes](#Wireframes)
+6. [Schema](#Schema)
+7. [Weekly User Story Check-off](#Weekly-User-Story-Check-off)
+
 ## Work Distribution
 * Khanh Ho: LoginViewController, FeedViewController
 * Airi Shimamura: ProfileViewController, ProfileSettingViewController
@@ -7,12 +16,15 @@
 * Loc Luu: PostViewController, HostViewController
 * An Lam: TableInfoViewController, SearchRestaurantViewController
 
-
 ## Demo Section
 ### Pitch PDF
 [Local Demo Pitch Slide](demoPitch.pdf)
 
 ### App Walkthrough
+<img src='img/demo_signIn&signUp.gif' title='Login Video Walkthrough' width='250' alt='Login Video Walkthrough' />
+<img src='img/demo_tablePage.gif' title='Table Video Walkthrough' width='250' alt='Table Video Walkthrough' />
+<img src='img/demo_lobbyPage.gif' title='Lobby Video Walkthrough' width='250' alt='Lobby Video Walkthrough' />
+<img src='img/demo_profilePage.gif' title='Profile Video Walkthrough' width='250' alt='Profile Video Walkthrough' />
 
 
 ### Demo Build Environment and Requirement
@@ -22,15 +34,7 @@ The Current Version is designed for Iphone 11 simulator iOS 15. Auto layout is a
 ### Contact Info
 * Vincent Hew
   </br>Email: vncent5779@gmail.com
-
-
-## Table of Contents
-1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
-3. [Weekly User Story Check-off](#Weekly-User-Story-Check-off)
-
+  
 ## Overview
 ### Description
 Meet2Eat is an iOS app that connects people through thoughtful conversations during meals. By giving away discounts to our users to encourage them connecting to different people and experiencing a different perspective of the world and community. Meet2Eat: a place for good food and good company to gather around.
