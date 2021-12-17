@@ -19,7 +19,7 @@
 ## Demo Section
 ### Pitch PDF
 [Local Demo Pitch Slide](demoPitch.pdf)
-</br>Presentation is recorded by local CodePath TechFellow in the local demo day.
+</br>Presentation is recorded by local CodePath TechFellow on the local demo day.
 
 ### App Walkthrough
 <img src='img/demo_signIn&signUp.gif' title='Login Video Walkthrough' width='250' alt='Login Video Walkthrough' /><img src='img/demo_tablePage.gif' title='Table Video Walkthrough' width='250' alt='Table Video Walkthrough' />
