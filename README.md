@@ -317,6 +317,6 @@ Infinite scrolling feature
 
 #### Build Progress Walkthrough
 
-<img src='unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='img/unit10_appWalkthrough.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
-<img src='unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
+<img src='img/unit10_githubWalkthrough.gif' title='Video Walkthrough' width='780' alt='Video Walkthrough' />
